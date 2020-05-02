@@ -34,7 +34,7 @@
 \renewcommand{\aboverulesep}{0pt}
 \renewcommand{\belowrulesep}{0pt}
 \newcommand{\headbf}[1]{\Large\textbf{#1}}
-\newcolumntype{L}{>{\sffamily\columncolor{white}[0pt][\tabcolsep]}X}
+\newcolumntype{L}{>{\columncolor{white}[0pt][\tabcolsep]}X}
 \newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{24em}}
 
 \begin{document}
@@ -56,29 +56,32 @@
 \scriptsize
 \bigskip
 
+\textbf{Variable Declaration} \$VARIABLE stands for a variable whose name is VARIABLE. For example, \$FILE means a file named FILE.
+\spacebtwtables
+
 % ---------- File Commands ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{File Commands}} \\
 	\mytoprule
-	\cmd{ls}					& \hlx
-	\cmd{ls -al}					& \hlx
-	\cmd{cd \$DIR}					& \hlx
-	\cmd{cd}					& \hlx
-	\cmd{pwd}					& \hlx
-	\cmd{rm \$FILENAME}					& \hlx
-	\cmd{rm -r \$DIR}					& \hlx
-	\cmd{rm -rf \$DIR}					& \hlx
-	\cmd{cp \$FILE1 \$FILE2}					& \hlx
-	\cmd{cp -r \$DIR1 \$DIR2}					& \hlx
-	\cmd{mv \$FILE1 \$FILE2}					& \hlx
-	\cmd{ln -s \$LINK \$FILE}					& \hlx
-	\cmd{touch \$FILE}					& \hlx
-	\cmd{cat > \$FILE}					& \hlx
-	\cmd{touch \$FILE}					& \hlx
-	\cmd{more \$FILE}					& \hlx
-	\cmd{head \$FILE}					& \hlx
-	\cmd{tail \$FILE}					& \hlx
-	\cmd{touch \$FILE}					& \\
+	\cmd{ls}					& list contents of files and directories \hlx
+	\cmd{ls -a}					& list hidden files and directories \hlx
+	\cmd{cd \$DIR}				& change working directory to \$DIR \hlx
+	\cmd{cd}					& change working directory to home \hlx
+	\cmd{pwd}					& print working directory \hlx
+	\cmd{rm \$FILE}				& remove \$FILE \hlx
+	\cmd{rm -r \$DIR}			& remove \$DIR \hlx
+	\cmd{rm -f \$FILE}			& force remove \$FILE \hlx
+	\cmd{rm -rf \$DIR}			& force remove \$DIR \hlx
+	\cmd{cp \$FILE1 \$FILE2}	& copy \$FILE1 to \$FILE2 \hlx
+	\cmd{cp -r \$DIR1 \$DIR2}	& copy \$DIR1 to \$DIR2 \hlx
+	\cmd{mv \$FILE1 \$FILE2}	& move \$FILE1 to \$FILE2 \hlx
+	\cmd{ln -s \$LINK \$FILE}	& create symbolic link \$LINK to \$FILE \hlx
+	\cmd{touch \$FILE}			& create \$FILE\hlx
+	\cmd{cat \$FILE}			& view content of \$FILE \hlx
+	\cmd{cat > \$FILE}			& write input into \$FILE \hlx
+	\cmd{more \$FILE}			& print contents of \$FILE \hlx
+	\cmd{head \$FILE}			& print the first 10 lines of \$FILE \hlx
+	\cmd{tail \$FILE}			& print the last 10 lines of \$FILE \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -101,7 +104,7 @@
 	\cmd{df}					& print disk usage \hlx
 	\cmd{du}					& print directory space usage \hlx
 	\cmd{free}					& print memory and swap usage \hlx
-	\cmd{whereis \$APP}			& print location of \$APP \hlx
+	\cmd{whereis \$APP}			& print locations of \$APP \hlx
 	\cmd{which \$APP}			& print print executable file of \$APP \\
 	\mybottomrule
 \end{tabularx}

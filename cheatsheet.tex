@@ -35,7 +35,7 @@
 \renewcommand{\belowrulesep}{0pt}
 \newcommand{\headbf}[1]{\Large\textbf{#1}}
 \newcolumntype{L}{>{\columncolor{white}[0pt][\tabcolsep]}X}
-\newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{24em}}
+\newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{20em}}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -56,7 +56,8 @@
 \scriptsize
 \bigskip
 
-\textbf{Variable Declaration} \$VARIABLE stands for a variable whose name is VARIABLE. For example, \$FILE means a file named FILE.
+\textbf{Variable Declaration} \$VARIABLE stands for a variable whose name is VARIABLE. For example, \$FILE means a file named FILE. \\
+\textbf{sudo} sudo means super user do, elevated right granted
 \spacebtwtables
 
 % ---------- File Commands ---------- %
@@ -67,6 +68,7 @@
 	\cmd{ls -a}					& list hidden files and directories \hlx
 	\cmd{cd \$DIR}				& change working directory to \$DIR \hlx
 	\cmd{cd}					& change working directory to home \hlx
+	\cmd{mkdir \$DIR}			& create a directory named \$DIR \hlx
 	\cmd{pwd}					& print working directory \hlx
 	\cmd{rm \$FILE}				& remove \$FILE \hlx
 	\cmd{rm -r \$DIR}			& remove \$DIR \hlx
@@ -75,7 +77,7 @@
 	\cmd{cp \$FILE1 \$FILE2}	& copy \$FILE1 to \$FILE2 \hlx
 	\cmd{cp -r \$DIR1 \$DIR2}	& copy \$DIR1 to \$DIR2 \hlx
 	\cmd{mv \$FILE1 \$FILE2}	& move \$FILE1 to \$FILE2 \hlx
-	\cmd{ln -s \$LINK \$FILE}	& create symbolic link \$LINK to \$FILE \hlx
+	\cmd{ln -s \$FILE \$LINK}	& create symbolic link \$LINK to \$FILE \hlx
 	\cmd{touch \$FILE}			& create \$FILE\hlx
 	\cmd{cat \$FILE}			& view content of \$FILE \hlx
 	\cmd{cat > \$FILE}			& write input into \$FILE \hlx
@@ -106,6 +108,36 @@
 	\cmd{free}					& print memory and swap usage \hlx
 	\cmd{whereis \$APP}			& print locations of \$APP \hlx
 	\cmd{which \$APP}			& print print executable file of \$APP \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- Compression ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Compression}} \\
+	\mytoprule
+	\cmd{tar cf \$FILE.tar \$FILES}		& convert \$FILES into \$FILE.tar \hlx
+	\cmd{tar xf \$FILE.tar}				& extract files from \$FILE.tar \hlx
+	\cmd{tar czf \$FILE.tar.gz \$FILES}	& compress \$FILES into \$FILE.tar.gz using Gzip \hlx
+	\cmd{tar xfz \$FILE.tar.gz}			& extract files from \$FILE.tar.gz using Gzip \hlx
+	\cmd{gzip \$FILE}					& compress \$FILE and rename it as \$FILE.gz \hlx
+	\cmd{gzip -d \$FILE.gz}				& decompress \$FILE.gz back to \$FILE \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- TODO ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+	\multicolumn{1}{@{}l@{}}{\headbf{TODO}} \\
+	\mytoprule
+	difference between ls -a and ls -al \hlx
+	code box for commands \hlx
+	ubuntu mono font for commands \hlx
+	display ip address \hlx
+	sudo apt install \hlx
+	sudo apt update \hlx
+	tar explanation \hlx
+	sudo apt upgrade\\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

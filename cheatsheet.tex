@@ -6,9 +6,9 @@
 \usepackage{tabularx} % tabular package
 \usepackage{mdframed} % for title
 \usepackage{libertine} % libertine font
-\usepackage[T1]{fontenc} % font encoding
-
-\usepackage[dvipsnames, table]{xcolor} % color manager
+\usepackage[T1]{fontenc} % font encodings
+\usepackage[table]{xcolor} % color manager
+\usepackage{tikz} % shaded block
 \usepackage[margin=1cm, landscape]{geometry} % document layout
 
 % define new commands for shortcuts
@@ -19,6 +19,7 @@
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
 \newcommand{\mytoprule}{\toprule[0.5ex]}
 \newcommand{\mybottomrule}{\bottomrule[0.5ex]}
+\newcommand{\codebox}[1]{\tikz[baseline]{\node[rectangle, rounded corners=0.5mm, text=black, fill=black!20, inner sep=1pt, anchor=base]{#1}}}
 
 % document settings
 \pagestyle{empty}
@@ -66,7 +67,7 @@
 	\mytoprule
 	\cmd{ls}					& list contents of files and directories \hlx
 	\cmd{ls -a}					& list hidden files and directories \hlx
-	\cmd{cd \$DIR}				& change working directory to \$DIR \hlx
+	\cmd{cd \codebox{\$DIR}}				& change working directory to \codebox{\$DIR} \hlx
 	\cmd{cd}					& change working directory to home \hlx
 	\cmd{mkdir \$DIR}			& create a directory named \$DIR \hlx
 	\cmd{pwd}					& print working directory \hlx
@@ -148,13 +149,12 @@
 	\multicolumn{1}{@{}l@{}}{\headbf{TODO}} \\
 	\mytoprule
 	difference between ls -a and ls -al \hlx
-	code box for commands \hlx
 	ubuntu mono font for commands \hlx
+	tab auto-completion \hlx
 	tar explanation \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
-
 
 \end{multicols*}
 \end{document}

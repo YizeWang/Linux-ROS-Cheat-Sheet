@@ -27,7 +27,7 @@
 \newcommand{\spacebtwtables}{\newline \vspace*{1em} \newline}
 
 % title settings
-\global\mdfdefinestyle{mystyle}{linecolor=gray, linewidth=1pt, leftmargin=0mm, rightmargin=0mm, skipbelow=0mm, skipabove=0mm}
+\mdfdefinestyle{TitleStyle}{linecolor=gray, linewidth=1pt, leftmargin=0mm, rightmargin=0mm, skipbelow=0mm, skipabove=0mm}
 
 % table settings
 \renewcommand\arraystretch{1.2}
@@ -41,7 +41,7 @@
 \begin{multicols*}{3}
 	
 % ---------- Title ---------- %
-\begin{mdframed}[style=mystyle]
+\begin{mdframed}[style=TitleStyle]
 \begin{center}
 	\fontfamily{pnc} \selectfont
 	\large\scshape
@@ -57,7 +57,7 @@
 \bigskip
 
 \textbf{Variable Declaration} \$VARIABLE stands for a variable whose name is VARIABLE. For example, \$FILE means a file named FILE. \\
-\textbf{sudo} sudo means super user do, elevated right granted
+\textbf{sudo} sudo means super user do, elevated right granted \\
 \spacebtwtables
 
 % ---------- File Commands ---------- %
@@ -122,6 +122,21 @@
 	\cmd{tar xfz \$FILE.tar.gz}			& extract files from \$FILE.tar.gz using Gzip \hlx
 	\cmd{gzip \$FILE}					& compress \$FILE and rename it as \$FILE.gz \hlx
 	\cmd{gzip -d \$FILE.gz}				& decompress \$FILE.gz back to \$FILE \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- Network ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Network}} \\
+	\mytoprule
+	\cmd{apt-get update}		& synchronize package index files from sources \hlx
+	\cmd{apt-get upgrade}		& install latest versions of installed packages \hlx
+	\cmd{ping \$HOST}		&  ping \$HOST and print results \hlx
+	\cmd{whois \$DOMAIN}		& print information about \$DOMAIN \hlx
+	\cmd{dig \$DOMAIN}		& print DNS of \$DOMAIN \hlx
+	\cmd{dig -x \$HOST}		& reverse lookup \$HOST \hlx
+	\cmd{wget \$FILE}		& download \$FILE \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

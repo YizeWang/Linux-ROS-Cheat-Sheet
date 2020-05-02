@@ -7,6 +7,7 @@
 \usepackage{mdframed} % for title
 \usepackage{libertine} % libertine font
 \usepackage[T1]{fontenc} % font encoding
+
 \usepackage[dvipsnames, table]{xcolor} % color manager
 \usepackage[margin=1cm, landscape]{geometry} % document layout
 
@@ -33,9 +34,8 @@
 \renewcommand{\aboverulesep}{0pt}
 \renewcommand{\belowrulesep}{0pt}
 \newcommand{\headbf}[1]{\Large\textbf{#1}}
-\newcolumntype{L}{>{\columncolor{white}[0pt][\tabcolsep]}X}
-\newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{10em}}
-\newcolumntype{M}{>{\columncolor{white}[\tabcolsep][0pt]}m{18em}}
+\newcolumntype{L}{>{\sffamily\columncolor{white}[0pt][\tabcolsep]}X}
+\newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{24em}}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -87,21 +87,22 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{System Info}} \\
 	\mytoprule
-	\cmd{date}					& \hlx
-	\cmd{cal}					& \hlx
-	\cmd{uptime}					& \hlx
-	\cmd{w}					& \hlx
-	\cmd{whoami}					& \hlx
-	\cmd{finger \$USER}					& \hlx
-	\cmd{uname -a}					& \hlx
-	\cmd{cat /proc/cpuinfo}					& \hlx
-	\cmd{cat /proc/meminfo}					& \hlx
-	\cmd{man \$COMMAND}					& \hlx
-	\cmd{df}					& \hlx
-	\cmd{du}					& \hlx
-	\cmd{free}					& \hlx
-	\cmd{whereis \$APP}					& \hlx
-	\cmd{which \$APP}					& \\
+	\cmd{env}					& print environment variables \hlx
+	\cmd{date}					& print system date and time \hlx
+	\cmd{cal}					& print current month calendar \hlx
+	\cmd{uptime}				& print system uptime \hlx
+	\cmd{w}						& print online users \hlx
+	\cmd{whoami}				& print current user \hlx
+	\cmd{finger \$USER}			& print information about \$USER \hlx
+	\cmd{uname -a}				& print kernel information \hlx
+	\cmd{cat /proc/cpuinfo}		& print cpu information \hlx
+	\cmd{cat /proc/meminfo}		& print memory information \hlx
+	\cmd{man \$COMMAND}			& print user manual of \$COMMAND \hlx
+	\cmd{df}					& print disk usage \hlx
+	\cmd{du}					& print directory space usage \hlx
+	\cmd{free}					& print memory and swap usage \hlx
+	\cmd{whereis \$APP}			& print location of \$APP \hlx
+	\cmd{which \$APP}			& print print executable file of \$APP \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

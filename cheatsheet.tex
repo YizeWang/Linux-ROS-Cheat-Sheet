@@ -177,6 +177,18 @@
 \end{tabularx}
 \spacebtwtables
 
+% ---------- Secure Shell ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
+	\mytoprule
+	\cmd{ssh \vb{\$USER}@\vb{\$HOST}}					& connect to \vb{\$HOST} as \vb{\$USER} \hlx
+	\cmd{ssh \vb{\$IP{\_}ADDRESS}}						& connect to \vb{\$IP{\_}ADDRESS} \hlx
+	\cmd{ssh -p \vb{\$PORT} \vb{\$USER}@\vb{\$HOST}}	& connect to \vb{\$HOST} on \vb{\$PORT} as \vb{\$USER} \hlx
+	\cmd{ssh-copy-id \vb{\$USER}@\vb{\$HOST}}			& add the key to \vb{\$HOST} as \vb{\$USER} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 % ---------- TODO ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 	\multicolumn{1}{@{}l@{}}{\headbf{TODO}} \\

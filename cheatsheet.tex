@@ -131,9 +131,6 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Network}} \\
 	\mytoprule
-	\cmd{apt-get update}				& synchronize package index files from sources \hlx
-	\cmd{apt-get upgrade}				& install latest versions of installed packages \hlx
-	\cmd{apt-get install \vb{\$PACKAGE}}		& install \vb{\$PACKAGE} \hlx
 	\cmd{ip address}					& print all internet protocol addresses \hlx
 	\cmd{ping \vb{\$HOST}}					& ping \vb{\$HOST} and print results \hlx
 	\cmd{whois \vb{\$DOMAIN}}				& print information about \vb{\$DOMAIN} \hlx
@@ -161,6 +158,21 @@
 	\cmd{exit}					& log out of the current session \hlx
 	\cmd{\ctrlp \shiftp E}		& split the window vertically vertically \hlx
 	\cmd{\ctrlp \shiftp O}		& split the window horizontally \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- Package ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Package}} \\
+	\mytoprule
+	\cmd{apt-get update}					& synchronize package index files from sources \\
+	\cmd{apt-get upgrade}					& install latest versions of installed packages \\
+	\cmd{apt-get install \vb{\$PACKAGE}}	& install \vb{\$PACKAGE} \hlx
+	\cmd{dpkg -i \vb{\$PACKAGE.deb}}		& install a Debian package \vb{\$PACKAGE.deb} \hlx
+	\cmd{./configure}						& configure building settings \\
+	\cmd{make}								& build the program from source code \\
+	\cmd{make install}						& install the program \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

@@ -40,18 +40,18 @@
 
 \begin{document}
 \begin{multicols*}{3}
-	
+
 % ---------- Title ---------- %
 \begin{mdframed}[style=TitleStyle]
-\begin{center}
-	\fontfamily{pnc} \selectfont
-	\large\scshape
-	Linux and ROS \\
-	Cheat Sheet \\
-	\bigskip
-	\footnotesize Author: Yize Wang \\
-	\footnotesize Last Updated: \today
-\end{center}
+	\begin{center}
+		\fontfamily{pnc} \selectfont
+		\large\scshape
+		Linux and ROS \\
+		Cheat Sheet \\
+		\bigskip
+		\footnotesize Author: Yize Wang \\
+		\footnotesize Last Updated: \today
+	\end{center}
 \end{mdframed}
 
 \scriptsize
@@ -144,11 +144,31 @@
 \end{tabularx}
 \spacebtwtables
 
+% ---------- Terminator ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Terminator}} \\
+	\mytoprule
+	\cmd{\ctrlp \altp T}		& launch a new terminal \hlx
+	\cmd{\ctrlp C}				& kill the current process \hlx
+	\cmd{\ctrlp Z}				& suspend  the current process \\
+	\cmd{fg}					& resume the suspended process in foreground \\
+	\cmd{bg}					& resume the suspended process in background \hlx
+	\cmd{\ctrlp D}				& log out of the current session \hlx
+	\cmd{\ctrlp W}				& erase one word in the current line \hlx
+	\cmd{\ctrlp U}				& erase the whole current line \hlx
+	\cmd{\ctrlp R}				& reverse search in the previous commands \hlx
+	\cmd{!!}					& execute the last command \hlx
+	\cmd{exit}					& log out of the current session \hlx
+	\cmd{\ctrlp \shiftp E}		& split the window vertically vertically \hlx
+	\cmd{\ctrlp \shiftp O}		& split window horizontally \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 % ---------- TODO ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 	\multicolumn{1}{@{}l@{}}{\headbf{TODO}} \\
 	\mytoprule
-	difference between ls -a and ls -al \hlx
 	ubuntu mono font for commands \hlx
 	tab auto-completion \hlx
 	tar explanation \\

@@ -189,6 +189,18 @@
 \end{tabularx}
 \spacebtwtables
 
+% ---------- Searching ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Searching}} \\
+	\mytoprule
+	\cmd{grep \vb{\$PATTERN} \vb{\$FILE}}			& search for \vb{\$PATTERN} in \vb{\$FILE} \hlx
+	\cmd{grep -r \vb{\$PATTERN} \vb{\$DIR}}			& recursively search for \vb{\$PATTERN} in \vb{\$DIR} \hlx
+	\cmd{\vb{\$COMMAND} | grep \vb{\$PATTERN}}		& search for \vb{\$PATTERN} in \vb{\$COMMAND}'s output \hlx
+	\cmd{locate \vb{\$FILE{\_}NAME}}				& find all files whose name contain \vb{\$FILE{\_}NAME} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 % ---------- TODO ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 	\multicolumn{1}{@{}l@{}}{\headbf{TODO}} \\

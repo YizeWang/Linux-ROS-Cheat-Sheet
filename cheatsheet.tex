@@ -19,7 +19,7 @@
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
 \newcommand{\mytoprule}{\toprule[0.5ex]}
 \newcommand{\mybottomrule}{\bottomrule[0.5ex]}
-\newcommand{\vb}[1]{\tikz[baseline]{\node[rectangle, rounded corners=0.5mm, text=black, fill=black!20, inner sep=1pt, anchor=base]{#1}}} % variable box
+\newcommand{\vb}[1]{\tikz[baseline]{\node[rectangle, rounded corners=0.5mm, text=black, fill=black!20, inner sep=1pt, anchor=base]{\$#1}}} % variable box
 
 % document settings
 \pagestyle{empty}
@@ -57,7 +57,7 @@
 \scriptsize
 \bigskip
 
-\textbf{Variable Declaration} \$VARIABLE stands for a variable whose name is VARIABLE. For example, \$FILE means a file named FILE. \\
+\textbf{Variable Declaration} VARIABLE stands for a variable whose name is VARIABLE. For example, FILE means a file named FILE. \\
 \textbf{sudo} sudo means super user do, elevated right granted \\
 \spacebtwtables
 
@@ -67,24 +67,24 @@
 	\mytoprule
 	\cmd{ls}					& list contents of files and directories \hlx
 	\cmd{ls -a}					& list hidden files and directories \hlx
-	\cmd{cd \vb{\$DIR}}				& change working directory to \vb{\$DIR} \hlx
+	\cmd{cd \vb{DIR}}				& change working directory to \vb{DIR} \hlx
 	\cmd{cd}					& change working directory to home \hlx
-	\cmd{mkdir \vb{\$DIR}}			& create a directory named \vb{\$DIR} \hlx
+	\cmd{mkdir \vb{DIR}}			& create a directory named \vb{DIR} \hlx
 	\cmd{pwd}					& print working directory \hlx
-	\cmd{rm \vb{\$FILE}}				& remove \vb{\$FILE} \hlx
-	\cmd{rm -r \vb{\$DIR}}			& remove \vb{\$DIR} \hlx
-	\cmd{rm -f \vb{\$FILE}}			& force remove \vb{\$FILE} \hlx
-	\cmd{rm -rf \vb{\$DIR}}			& force remove \vb{\$DIR} \hlx
-	\cmd{cp \vb{\$FILE1} \vb{\$FILE2}}	& copy \vb{\$FILE1} to \vb{\$FILE2} \hlx
-	\cmd{cp -r \vb{\$DIR1} \vb{\$DIR2}}	& copy \vb{\$DIR1} to \vb{\$DIR2} \hlx
-	\cmd{mv \vb{\$FILE1} \vb{\$FILE2}}	& move \vb{\$FILE1} to \vb{\$FILE2} \hlx
-	\cmd{ln -s \vb{\$FILE} \vb{\$LINK}}	& create symbolic link \vb{\$LINK} to \vb{\$FILE} \hlx
-	\cmd{touch \vb{\$FILE}}			& create \vb{\$FILE} \hlx
-	\cmd{cat \vb{\$FILE}}			& view content of \vb{\$FILE} \hlx
-	\cmd{cat > \vb{\$FILE}}			& write input into \vb{\$FILE} \hlx
-	\cmd{more \vb{\$FILE}}			& print contents of \vb{\$FIL}E \hlx
-	\cmd{head \vb{\$FILE}}			& print the first 10 lines of \vb{\$FILE} \hlx
-	\cmd{tail \vb{\$FILE}}			& print the last 10 lines of \vb{\$FILE} \\
+	\cmd{rm \vb{FILE}}				& remove \vb{FILE} \hlx
+	\cmd{rm -r \vb{DIR}}			& remove \vb{DIR} \hlx
+	\cmd{rm -f \vb{FILE}}			& force remove \vb{FILE} \hlx
+	\cmd{rm -rf \vb{DIR}}			& force remove \vb{DIR} \hlx
+	\cmd{cp \vb{FILE1} \vb{FILE2}}	& copy \vb{FILE1} to \vb{FILE2} \hlx
+	\cmd{cp -r \vb{DIR1} \vb{DIR2}}	& copy \vb{DIR1} to \vb{DIR2} \hlx
+	\cmd{mv \vb{FILE1} \vb{FILE2}}	& move \vb{FILE1} to \vb{FILE2} \hlx
+	\cmd{ln -s \vb{FILE} \vb{LINK}}	& create symbolic link \vb{LINK} to \vb{FILE} \hlx
+	\cmd{touch \vb{FILE}}			& create \vb{FILE} \hlx
+	\cmd{cat \vb{FILE}}			& view content of \vb{FILE} \hlx
+	\cmd{cat > \vb{FILE}}			& write input into \vb{FILE} \hlx
+	\cmd{more \vb{FILE}}			& print contents of \vb{FIL}E \hlx
+	\cmd{head \vb{FILE}}			& print the first 10 lines of \vb{FILE} \hlx
+	\cmd{tail \vb{FILE}}			& print the last 10 lines of \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -99,16 +99,16 @@
 	\cmd{uptime}				& print system uptime \hlx
 	\cmd{w}						& print online users \hlx
 	\cmd{whoami}				& print current user \hlx
-	\cmd{finger \vb{\$USER}}			& print information about \vb{\$USER} \hlx
+	\cmd{finger \vb{USER}}			& print information about \vb{USER} \hlx
 	\cmd{uname -a}				& print kernel information \hlx
 	\cmd{cat /proc/cpuinfo}		& print cpu information \hlx
 	\cmd{cat /proc/meminfo}		& print memory information \hlx
-	\cmd{man \vb{\$COMMAND}}			& print user manual of \vb{\$COMMAND} \hlx
+	\cmd{man \vb{COMMAND}}			& print user manual of \vb{COMMAND} \hlx
 	\cmd{df}					& print disk usage \hlx
 	\cmd{du}					& print directory space usage \hlx
 	\cmd{free}					& print memory and swap usage \hlx
-	\cmd{whereis \vb{\$APP}}			& print locations of \vb{\$APP} \hlx
-	\cmd{which \vb{\$APP}}			& print print executable file of \vb{\$APP} \\
+	\cmd{whereis \vb{APP}}			& print locations of \vb{APP} \hlx
+	\cmd{which \vb{APP}}			& print print executable file of \vb{APP} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -117,12 +117,12 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Compression}} \\
 	\mytoprule
-	\cmd{tar cf \vb{\$FILE.tar} \vb{\$FILES}}			& convert \vb{\$FILES} into \vb{\$FILE.tar} \hlx
-	\cmd{tar xf \vb{\$FILE.tar}}					& extract files from \vb{\$FILE.tar} \hlx
-	\cmd{tar czf \vb{\$FILE.tar.gz} \vb{\$FILES}}		& compress \vb{\$FILES} into \vb{\$FILE.tar.gz} using Gzip \hlx
-	\cmd{tar xfz \vb{\$FILE.tar.gz}}				& extract files from \vb{\$FILE.tar.gz} using Gzip \hlx
-	\cmd{gzip \vb{\$FILE}}						& compress \vb{\$FILE} and rename it as \vb{\$FILE.gz} \hlx
-	\cmd{gzip -d \vb{\$FILE.gz}}					& decompress \vb{\$FILE.gz} back to \vb{\$FILE} \\
+	\cmd{tar cf \vb{FILE.tar} \vb{FILES}}			& convert \vb{FILES} into \vb{FILE.tar} \hlx
+	\cmd{tar xf \vb{FILE.tar}}					& extract files from \vb{FILE.tar} \hlx
+	\cmd{tar czf \vb{FILE.tar.gz} \vb{FILES}}		& compress \vb{FILES} into \vb{FILE.tar.gz} using Gzip \hlx
+	\cmd{tar xfz \vb{FILE.tar.gz}}				& extract files from \vb{FILE.tar.gz} using Gzip \hlx
+	\cmd{gzip \vb{FILE}}						& compress \vb{FILE} and rename it as \vb{FILE.gz} \hlx
+	\cmd{gzip -d \vb{FILE.gz}}					& decompress \vb{FILE.gz} back to \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -132,11 +132,11 @@
 	\multicolumn{2}{@{}l@{}}{\headbf{Network}} \\
 	\mytoprule
 	\cmd{ip address}					& print all internet protocol addresses \hlx
-	\cmd{ping \vb{\$HOST}}					& ping \vb{\$HOST} and print results \hlx
-	\cmd{whois \vb{\$DOMAIN}}				& print information about \vb{\$DOMAIN} \hlx
-	\cmd{dig \vb{\$DOMAIN}}					& print DNS of \vb{\$DOMAIN} \hlx
-	\cmd{dig -x \vb{\$HOST}}					& reverse lookup \vb{\$HOST} \hlx
-	\cmd{wget \vb{\$FILE}}					& download \vb{\$FILE} \\
+	\cmd{ping \vb{HOST}}					& ping \vb{HOST} and print results \hlx
+	\cmd{whois \vb{DOMAIN}}				& print information about \vb{DOMAIN} \hlx
+	\cmd{dig \vb{DOMAIN}}					& print DNS of \vb{DOMAIN} \hlx
+	\cmd{dig -x \vb{HOST}}					& reverse lookup \vb{HOST} \hlx
+	\cmd{wget \vb{FILE}}					& download \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -168,8 +168,8 @@
 	\mytoprule
 	\cmd{apt-get update}					& synchronize package index files from sources \\
 	\cmd{apt-get upgrade}					& install latest versions of installed packages \\
-	\cmd{apt-get install \vb{\$PACKAGE}}	& install \vb{\$PACKAGE} \hlx
-	\cmd{dpkg -i \vb{\$PACKAGE.deb}}		& install a Debian package \vb{\$PACKAGE.deb} \hlx
+	\cmd{apt-get install \vb{PACKAGE}}	& install \vb{PACKAGE} \hlx
+	\cmd{dpkg -i \vb{PACKAGE.deb}}		& install a Debian package \vb{PACKAGE.deb} \hlx
 	\cmd{./configure}						& configure building settings \\
 	\cmd{make}								& build the program from source code \\
 	\cmd{make install}						& install the program \\
@@ -181,10 +181,10 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
 	\mytoprule
-	\cmd{ssh \vb{\$USER}@\vb{\$HOST}}					& connect to \vb{\$HOST} as \vb{\$USER} \hlx
-	\cmd{ssh \vb{\$IP{\_}ADDRESS}}						& connect to \vb{\$IP{\_}ADDRESS} \hlx
-	\cmd{ssh -p \vb{\$PORT} \vb{\$USER}@\vb{\$HOST}}	& connect to \vb{\$HOST} on \vb{\$PORT} as \vb{\$USER} \hlx
-	\cmd{ssh-copy-id \vb{\$USER}@\vb{\$HOST}}			& add the key to \vb{\$HOST} as \vb{\$USER} \\
+	\cmd{ssh \vb{USER}@\vb{HOST}}					& connect to \vb{HOST} as \vb{USER} \hlx
+	\cmd{ssh \vb{IP{\_}ADDRESS}}						& connect to \vb{IP{\_}ADDRESS} \hlx
+	\cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}	& connect to \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
+	\cmd{ssh-copy-id \vb{USER}@\vb{HOST}}			& add the key to \vb{HOST} as \vb{USER} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -193,10 +193,127 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Searching}} \\
 	\mytoprule
-	\cmd{grep \vb{\$PATTERN} \vb{\$FILE}}			& search for \vb{\$PATTERN} in \vb{\$FILE} \hlx
-	\cmd{grep -r \vb{\$PATTERN} \vb{\$DIR}}			& recursively search for \vb{\$PATTERN} in \vb{\$DIR} \hlx
-	\cmd{\vb{\$COMMAND} | grep \vb{\$PATTERN}}		& search for \vb{\$PATTERN} in \vb{\$COMMAND}'s output \hlx
-	\cmd{locate \vb{\$FILE{\_}NAME}}				& find all files whose name contain \vb{\$FILE{\_}NAME} \\
+	\cmd{grep \vb{PATTERN} \vb{FILE}}			& search for \vb{PATTERN} in \vb{FILE} \hlx
+	\cmd{grep -r \vb{PATTERN} \vb{DIR}}			& recursively search for \vb{PATTERN} in \vb{DIR} \hlx
+	\cmd{\vb{COMMAND} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{COMMAND}'s output \hlx
+	\cmd{locate \vb{FILE{\_}NAME}}				& find all files whose name contain \vb{FILE{\_}NAME} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- Git ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Git}} \\
+	\mytoprule
+	\cmd{git clone \vb{URL}}			& clone the repository from \vb{URL} \hlx
+	\cmd{git status}					& print current branch status \vb{BRANCH} \\
+	\cmd{git branch \vb{BRANCH}}		& create a new branch named \vb{BRANCH} \\
+	\cmd{git checkout \vb{BRANCH}}		& switch to the branch named \vb{BRANCH} \\
+	\cmd{git merge \vb{BRANCH}}			& combine \vb{BRANCH} into the current one \hlx
+	\cmd{git fetch}						& download all history from GitHub \\
+	\cmd{git merge}						& combine remote branches into local branch \\
+	\cmd{git push}						& upload all local branch commits to GitHub \\
+	\cmd{git pull}						& update local branch from GitHub \hlx
+	\cmd{git log}						& list version history for current branch \\
+	\cmd{git log --follow \vb{FILE}}	& list version history for \vb{FILE} \\
+	\cmd{git show \vb{COMMIT}}			& output content changes of \vb{COMMIT} \\
+	\cmd{git add \vb{FILE}}				& stage \vb{FILE} \\
+	\cmd{git commit -m "\vb{MESSAGE}"}	& commit staged file with \vb{MESSAGE} \hlx
+	\cmd{git reset \vb{FILE}}			& reset \vb{FILE} \\
+	\cmd{git reset --hard}				& reset all uncommitted changes \\
+	\cmd{git clean -fd}					& recursively force remove unstaged files \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- .bashrc ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{.bashrc}} \\
+	\mytoprule
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- ROS in Terminal ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS in Terminal}} \\
+	\mytoprule
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- ROS Package Structure ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Package Structure}} \\
+	\mytoprule
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- ROS Visualization ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Visualization}} \\
+	\mytoprule
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

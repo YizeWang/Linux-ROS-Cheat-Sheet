@@ -15,7 +15,8 @@
 \newcommand{\altp}{Alt$+$}
 \newcommand{\ctrlp}{Ctrl$+$}
 \newcommand{\shiftp}{Shift$+$}
-\newcommand{\cmd}[1]{\textbf{#1}}
+\newcommand{\cmd}[1]{\$ \textbf{#1}}
+\newcommand{\code}[1]{\textbf{#1}}
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
 \newcommand{\mytoprule}{\toprule[0.5ex]}
 \newcommand{\mybottomrule}{\bottomrule[0.5ex]}
@@ -36,9 +37,8 @@
 \renewcommand{\belowrulesep}{0pt}
 \newcommand{\headbf}[1]{\Large\textbf{#1}}
 \newcolumntype{L}{>{\columncolor{white}[0pt][\tabcolsep]}X}
-\newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{20em}}
+\newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{19em}}
 \newcolumntype{S}{>{\columncolor{white}[\tabcolsep][0pt]}m{16em}}
-\newcolumntype{T}{>{\columncolor{white}[\tabcolsep][0pt]}m{28em}}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -193,8 +193,8 @@
 	\mytoprule
 	\cmd{grep \vb{PATTERN} \vb{FILE}}			& search for \vb{PATTERN} in \vb{FILE} \hlx
 	\cmd{grep -r \vb{PATTERN} \vb{DIR}}			& recursively search for \vb{PATTERN} in \vb{DIR} \hlx
-	\cmd{\vb{COMMAND} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{COMMAND}'s output \hlx
-	\cmd{locate \vb{FILE{\_}NAME}}				& find all files whose name contain \vb{FILE{\_}NAME} \\
+	\cmd{\vb{CMD} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{CMD}'s output \hlx
+	\cmd{locate \vb{FILENAME}}				& find all files whose name contain \vb{FILENAME} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -228,14 +228,6 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{.bashrc}} \\
 	\mytoprule
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
 	\cmd{}			& \hlx
 	\cmd{}			& \hlx
 	\cmd{}			& \hlx
@@ -288,7 +280,7 @@
 \spacebtwtables
 
 % ---------- ROS Service ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Service}} \\
 	\mytoprule
 	\cmd{rosservice list}							& list active services \hlx
@@ -346,40 +338,31 @@ remember to source \textasciitilde/catkin\_ws/devel/setup.bash
 \spacebtwtables
 
 % ---------- ROS Packge Structure ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LT@{}}
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
 	\mytoprule
-	\cmd{package.xml}		& manifest, dependencies and plugins \hlx
-	\cmd{CMakeLists.txt}	& description of compilation procedure \hlx
-	\cmd{src/}				& C and C++ source codes \hlx
-	\cmd{include/}			& C and C++ header files \hlx
-	\cmd{scripts/}			& Python and bash scripts \hlx
-	\cmd{config/}			& ymal configuration files \hlx
-	\cmd{cfg/}				& dynamics reconfigure scripts \hlx
-	\cmd{launch/}			& launch files \\
+	\code{package.xml}		& manifest, dependencies and plugins \hlx
+	\code{CMakeLists.txt}	& description of compilation procedure \hlx
+	\code{src/}				& C and C++ source codes \hlx
+	\code{include/}			& C and C++ header files \hlx
+	\code{scripts/}			& Python and bash scripts \hlx
+	\code{config/}			& ymal configuration files \hlx
+	\code{cfg/}				& dynamics reconfigure scripts \hlx
+	\code{launch/}			& launch files \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
 
-% ---------- ROS Visualization ---------- %
+% ---------- ROS Visualization Tools ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Visualization}} \\
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Visualization Tools}} \\
 	\mytoprule
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \\
+	\cmd{rviz}				& 3D visualization of data and models \hlx
+	\cmd{gzclient}			& Gazebo GUI \hlx
+	\cmd{rqt}				& powerful GUI tool \\
+	\cmd{rqt\_plot}			& simple and lightweight plotting \\
+	\cmd{rqt\_bag}			& visualize content of a bag \\
+	\cmd{rqt\_image\_view}	& visualize camera images \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

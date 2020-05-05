@@ -304,25 +304,16 @@
 \end{tabularx}
 \spacebtwtables
 
-% ---------- ROS Package Structure ---------- %
+% ---------- ROS Parameter ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Package Structure}} \\
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Parameter}} \\
 	\mytoprule
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \\
+	\cmd{rosparam list}						& list all parameter names \hlx
+	\cmd{rosparam set \vb{PARAM} \vb{VAL}}	& set \vb{PARAM} to \vb{VAL} \hlx
+	\cmd{rosparam get \vb{PARAM}}			& print value of \vb{PARAM} \hlx
+	\cmd{rosparam load \vb{YAML}}			& load parameters from \vb{YAML} \hlx
+	\cmd{rosparam dump \vb{YAML}}			& dump parameters to \vb{YAML} \hlx
+	\cmd{rosparam delete \vb{PARAM}}		& delete \vb{PARAM} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

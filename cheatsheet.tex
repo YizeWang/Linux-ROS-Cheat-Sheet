@@ -37,6 +37,7 @@
 \newcommand{\headbf}[1]{\Large\textbf{#1}}
 \newcolumntype{L}{>{\columncolor{white}[0pt][\tabcolsep]}X}
 \newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{20em}}
+\newcolumntype{S}{>{\columncolor{white}[\tabcolsep][0pt]}m{16em}}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -249,25 +250,13 @@
 \end{tabularx}
 \spacebtwtables
 
-% ---------- ROS in Terminal ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS in Terminal}} \\
+% ---------- ROS Run ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Run}} \\
 	\mytoprule
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \\
+	\cmd{roscore}									& invoke the core of ros \hlx
+	\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE}}		& run \vb{EXECUTABLE} in \vb{PACKAGE} \hlx
+	\cmd{roslaunch \vb{PACKAGE} \vb{LAUNCHFILE}}	& launch \vb{LAUNCHFILE} in \vb{PACKAGE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -325,6 +314,8 @@
 	ubuntu mono font for commands \hlx
 	tab auto-completion \hlx
 	tar explanation \\
+	is git reset unstage or reset? \\
+	simtime true\\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

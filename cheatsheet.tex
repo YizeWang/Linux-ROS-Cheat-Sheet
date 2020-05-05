@@ -47,8 +47,8 @@
 	\begin{center}
 		\fontfamily{pnc} \selectfont
 		\large\scshape
-		Linux and ROS \\
-		Cheat Sheet \\
+		ETH Robotics Summer School \\
+		Linux \& ROS Cheat Sheet \\
 		\bigskip
 		\footnotesize Author: Yize Wang \\
 		\footnotesize Last Updated: \today
@@ -270,6 +270,45 @@
 	\cmd{rosnode info \vb{NODE}}		& print information about \vb{NODE} \hlx
 	\cmd{rosnode machine}				& list nodes running on the machine \hlx
 	\cmd{rosnode kill \vb{NODE}}		& kill a running node \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- ROS Topic ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Topic}} \\
+	\mytoprule
+	\cmd{rostopic list}					& print information about active topics \hlx
+	\cmd{rostopic bw \vb{TOPIC}}		& display bandwidth used by \vb{TOPIC} \hlx
+	\cmd{rostopic echo \vb{TOPIC}}		& print messages from \vb{TOPIC}\hlx
+	\cmd{rostopic find \vb{TOPICTYPE}}	& find topics with \vb{TOPICTYPE} \hlx
+	\cmd{rostopic hz \vb{TOPIC}}		& display publishing rate of \vb{TOPIC} \hlx
+	\cmd{rostopic info \vb{TOPIC}}		& print information about \vb{TOPIC} \hlx
+	\cmd{rostopic pub \vb{TOPIC}}		& publish data to \vb{TOPIC} \hlx
+	\cmd{rostopic type\vb{TOPIC}}		& print type of \vb{TOPIC} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- ROS Package Structure ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Package Structure}} \\
+	\mytoprule
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

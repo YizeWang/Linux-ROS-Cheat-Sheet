@@ -261,6 +261,19 @@
 \end{tabularx}
 \spacebtwtables
 
+% ---------- ROS Node ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Node}} \\
+	\mytoprule
+	\cmd{rosnode ping \vb{NODE}}		& test connectivity to \vb{NODE}\hlx
+	\cmd{rosnode list}					& list active nodes \hlx
+	\cmd{rosnode info \vb{NODE}}		& print information about \vb{NODE} \hlx
+	\cmd{rosnode machine}				& list nodes running on the machine \hlx
+	\cmd{rosnode kill \vb{NODE}}		& kill a running node \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 % ---------- ROS Package Structure ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Package Structure}} \\
@@ -316,6 +329,8 @@
 	tar explanation \\
 	is git reset unstage or reset? \\
 	simtime true\\
+	copyright\\
+	rosnode machine \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

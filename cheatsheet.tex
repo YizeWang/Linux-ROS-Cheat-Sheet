@@ -38,6 +38,7 @@
 \newcolumntype{L}{>{\columncolor{white}[0pt][\tabcolsep]}X}
 \newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{20em}}
 \newcolumntype{S}{>{\columncolor{white}[\tabcolsep][0pt]}m{16em}}
+\newcolumntype{T}{>{\columncolor{white}[\tabcolsep][0pt]}m{28em}}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -342,6 +343,22 @@
 	\mybottomrule
 \end{tabularx}
 remember to source \textasciitilde/catkin\_ws/devel/setup.bash
+\spacebtwtables
+
+% ---------- ROS Packge Structure ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LT@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
+	\mytoprule
+	\cmd{package.xml}		& manifest, dependencies and plugins \hlx
+	\cmd{CMakeLists.txt}	& description of compilation procedure \hlx
+	\cmd{src/}				& C and C++ source codes \hlx
+	\cmd{include/}			& C and C++ header files \hlx
+	\cmd{scripts/}			& Python and bash scripts \hlx
+	\cmd{config/}			& ymal configuration files \hlx
+	\cmd{cfg/}				& dynamics reconfigure scripts \hlx
+	\cmd{launch/}			& launch files \\
+	\mybottomrule
+\end{tabularx}
 \spacebtwtables
 
 % ---------- ROS Visualization ---------- %

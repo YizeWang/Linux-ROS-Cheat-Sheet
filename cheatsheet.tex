@@ -281,7 +281,7 @@
 	\cmd{rostopic list}					& print information about active topics \hlx
 	\cmd{rostopic bw \vb{TOPIC}}		& display bandwidth used by \vb{TOPIC} \hlx
 	\cmd{rostopic echo \vb{TOPIC}}		& print messages from \vb{TOPIC}\hlx
-	\cmd{rostopic find \vb{TOPICTYPE}}	& find topics with \vb{TOPICTYPE} \hlx
+	\cmd{rostopic find \vb{TYPE}}		& find topics with \vb{TYPE} \hlx
 	\cmd{rostopic hz \vb{TOPIC}}		& display publishing rate of \vb{TOPIC} \hlx
 	\cmd{rostopic info \vb{TOPIC}}		& print information about \vb{TOPIC} \hlx
 	\cmd{rostopic pub \vb{TOPIC}}		& publish data to \vb{TOPIC} \hlx
@@ -290,25 +290,16 @@
 \end{tabularx}
 \spacebtwtables
 
-% ---------- ROS Package Structure ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Package Structure}} \\
+% ---------- ROS Service ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Service}} \\
 	\mytoprule
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \\
+	\cmd{rosservice list}							& list active services \hlx
+	\cmd{rosservice call \vb{SERVICE} \vb{ARGS}}	& call \vb{SERVICE} with \vb{ARGS} \hlx
+	\cmd{rosservice find \vb{TYPE}}					& find services with \vb{TYPE} \hlx
+	\cmd{rosservice info \vb{SERVICE}}				& print information about \vb{SERVICE} \hlx
+	\cmd{rosservice type \vb{SERVICE}}				& print type of \vb{SERVICE} \hlx
+	\cmd{rosservice uri \vb{SERVICE}}				& print uri of \vb{SERVICE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -370,6 +361,7 @@
 	simtime true\\
 	copyright\\
 	rosnode machine \\
+	column split\\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

@@ -63,12 +63,12 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{File Commands}} \\
 	\mytoprule
-	\cmd{ls}					& list contents of files and directories \hlx
-	\cmd{ls -a}					& list hidden files and directories \hlx
+	\cmd{ls}						& list contents of files and directories \hlx
+	\cmd{ls -a}						& list hidden files and directories \hlx
 	\cmd{cd \vb{DIR}}				& change working directory to \vb{DIR} \hlx
-	\cmd{cd}					& change working directory to home \hlx
+	\cmd{cd}						& change working directory to home \hlx
 	\cmd{mkdir \vb{DIR}}			& create a directory named \vb{DIR} \hlx
-	\cmd{pwd}					& print working directory \hlx
+	\cmd{pwd}						& print working directory \hlx
 	\cmd{rm \vb{FILE}}				& remove \vb{FILE} \hlx
 	\cmd{rm -r \vb{DIR}}			& remove \vb{DIR} \hlx
 	\cmd{rm -f \vb{FILE}}			& force remove \vb{FILE} \hlx
@@ -78,11 +78,12 @@
 	\cmd{mv \vb{FILE1} \vb{FILE2}}	& move \vb{FILE1} to \vb{FILE2} \hlx
 	\cmd{ln -s \vb{FILE} \vb{LINK}}	& create symbolic link \vb{LINK} to \vb{FILE} \hlx
 	\cmd{touch \vb{FILE}}			& create \vb{FILE} \hlx
-	\cmd{cat \vb{FILE}}			& view content of \vb{FILE} \hlx
+	\cmd{cat \vb{FILE}}				& view content of \vb{FILE} \hlx
 	\cmd{cat > \vb{FILE}}			& write input into \vb{FILE} \hlx
 	\cmd{more \vb{FILE}}			& print contents of \vb{FIL}E \hlx
 	\cmd{head \vb{FILE}}			& print the first 10 lines of \vb{FILE} \hlx
-	\cmd{tail \vb{FILE}}			& print the last 10 lines of \vb{FILE} \\
+	\cmd{tail \vb{FILE}}			& print the last 10 lines of \vb{FILE} \hlx
+	\cmd{gedif \vb{FILE}}			& edit \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -274,7 +275,8 @@
 	\cmd{rostopic hz \vb{TOPIC}}		& display publishing rate of \vb{TOPIC} \hlx
 	\cmd{rostopic info \vb{TOPIC}}		& print information about \vb{TOPIC} \hlx
 	\cmd{rostopic pub \vb{TOPIC}}		& publish data to \vb{TOPIC} \hlx
-	\cmd{rostopic type\vb{TOPIC}}		& print type of \vb{TOPIC} \\
+	\cmd{rostopic type\vb{TOPIC}}		& print type of \vb{TOPIC} \hlx
+	\cmd{rosmsg show \vb{TYPE}}}		& print structure of \vb{TYPE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -288,7 +290,8 @@
 	\cmd{rosservice find \vb{TYPE}}					& find services with \vb{TYPE} \hlx
 	\cmd{rosservice info \vb{SERVICE}}				& print information about \vb{SERVICE} \hlx
 	\cmd{rosservice type \vb{SERVICE}}				& print type of \vb{SERVICE} \hlx
-	\cmd{rosservice uri \vb{SERVICE}}				& print uri of \vb{SERVICE} \\
+	\cmd{rosservice uri \vb{SERVICE}}				& print uri of \vb{SERVICE} \hlx
+	\cmd{rossrv show \vb{TYPE}}}					& print structure of \vb{TYPE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -325,6 +328,7 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Catkin Workspace}} \\
 	\mytoprule
+	\cmd{roscd \vb{PACKAGE}}		& change directory to \vb{PACKAGE} \hlx
 	\cmd{mkdir -p \textasciitilde/catkin\_ws/src}			& create a new catkin workspace \\
 	\cmd{cd \textasciitilde/catkin\_ws}			& \\
 	\cmd{catkin\_make}			& \hlx
@@ -344,6 +348,8 @@ remember to source \textasciitilde/catkin\_ws/devel/setup.bash
 	\code{package.xml}		& manifest, dependencies and plugins \hlx
 	\code{CMakeLists.txt}	& description of compilation procedure \hlx
 	\code{src/}				& C and C++ source codes \hlx
+	\code{build/}			& generated makefiles and support files \hlx
+	\code{devel/}			& compiled binaries, libraries, headers \hlx
 	\code{include/}			& C and C++ header files \hlx
 	\code{scripts/}			& Python and bash scripts \hlx
 	\code{config/}			& ymal configuration files \hlx
@@ -366,7 +372,6 @@ remember to source \textasciitilde/catkin\_ws/devel/setup.bash
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
-
 
 % ---------- ROS Visualization ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -405,6 +410,8 @@ remember to source \textasciitilde/catkin\_ws/devel/setup.bash
 	column split\\
 	Cmakelist \\
 	ros launchfile \\
+	--help -h \\
+	path symbolic links\\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

@@ -39,6 +39,7 @@
 \newcolumntype{L}{>{\columncolor{white}[0pt][\tabcolsep]}X}
 \newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{19em}}
 \newcolumntype{S}{>{\columncolor{white}[\tabcolsep][0pt]}m{16em}}
+\newcolumntype{T}{>{\columncolor{white}[\tabcolsep][0pt]}m{2em}}
 
 \begin{document}
 \begin{multicols*}{3}
@@ -98,16 +99,31 @@
 	\cmd{uptime}				& print system uptime \hlx
 	\cmd{w}						& print online users \hlx
 	\cmd{whoami}				& print current user \hlx
-	\cmd{finger \vb{USER}}			& print information about \vb{USER} \hlx
+	\cmd{finger \vb{USER}}		& print information about \vb{USER} \hlx
 	\cmd{uname -a}				& print kernel information \hlx
 	\cmd{cat /proc/cpuinfo}		& print cpu information \hlx
 	\cmd{cat /proc/meminfo}		& print memory information \hlx
-	\cmd{man \vb{COMMAND}}			& print user manual of \vb{COMMAND} \hlx
+	\cmd{man \vb{COMMAND}}		& print user manual of \vb{COMMAND} \hlx
 	\cmd{df}					& print disk usage \hlx
 	\cmd{du}					& print directory space usage \hlx
 	\cmd{free}					& print memory and swap usage \hlx
-	\cmd{whereis \vb{APP}}			& print locations of \vb{APP} \hlx
-	\cmd{which \vb{APP}}			& print print executable file of \vb{APP} \\
+	\cmd{whereis \vb{APP}}		& print locations of \vb{APP} \hlx
+	\cmd{which \vb{APP}}		& print print executable file of \vb{APP} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- Linux Basics ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LTR@{}}
+	\multicolumn{3}{@{}l@{}}{\headbf{Linux Basics}} \\
+	\mytoprule
+	path symbolic links		&\code{.}					& current directory \\
+	&\code{..}					& parent directory \\
+	&\code{\textasciitilde}		& home directory \\
+	&\code{\textbackslash}		& root directory \hlx
+	output direction		&\code{>}					& to a file (rewrite) \\
+	&\code{{>}{>}}				& to a file (append) \\
+	&\code{|}					& pipe the output of first command to the second \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -116,9 +132,9 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Compression}} \\
 	\mytoprule
-	\cmd{tar cf \vb{FILE.tar} \vb{FILES}}			& convert \vb{FILES} into \vb{FILE.tar} \hlx
+	\cmd{tar cf \vb{FILE.tar} \vb{FILES}}		& convert \vb{FILES} into \vb{FILE.tar} \hlx
 	\cmd{tar xf \vb{FILE.tar}}					& extract files from \vb{FILE.tar} \hlx
-	\cmd{tar czf \vb{FILE.tar.gz} \vb{FILES}}		& compress \vb{FILES} into \vb{FILE.tar.gz} using Gzip \hlx
+	\cmd{tar czf \vb{FILE.tar.gz} \vb{FILES}}	& compress \vb{FILES} into \vb{FILE.tar.gz} using Gzip \hlx
 	\cmd{tar xfz \vb{FILE.tar.gz}}				& extract files from \vb{FILE.tar.gz} using Gzip \hlx
 	\cmd{gzip \vb{FILE}}						& compress \vb{FILE} and rename it as \vb{FILE.gz} \hlx
 	\cmd{gzip -d \vb{FILE.gz}}					& decompress \vb{FILE.gz} back to \vb{FILE} \\
@@ -130,12 +146,12 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Network}} \\
 	\mytoprule
-	\cmd{ip address}					& print all internet protocol addresses \hlx
-	\cmd{ping \vb{HOST}}					& ping \vb{HOST} and print results \hlx
-	\cmd{whois \vb{DOMAIN}}				& print information about \vb{DOMAIN} \hlx
-	\cmd{dig \vb{DOMAIN}}					& print DNS of \vb{DOMAIN} \hlx
-	\cmd{dig -x \vb{HOST}}					& reverse lookup \vb{HOST} \hlx
-	\cmd{wget \vb{FILE}}					& download \vb{FILE} \\
+	\cmd{ip address}			& print all internet protocol addresses \hlx
+	\cmd{ping \vb{HOST}}		& ping \vb{HOST} and print results \hlx
+	\cmd{whois \vb{DOMAIN}}		& print information about \vb{DOMAIN} \hlx
+	\cmd{dig \vb{DOMAIN}}		& print DNS of \vb{DOMAIN} \hlx
+	\cmd{dig -x \vb{HOST}}		& reverse lookup \vb{HOST} \hlx
+	\cmd{wget \vb{FILE}}		& download \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -161,29 +177,29 @@
 \end{tabularx}
 \spacebtwtables
 
+% ---------- Secure Shell ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
+	\mytoprule
+	\cmd{ssh \vb{USER}@\vb{HOST}}					& connect to \vb{HOST} as \vb{USER} \hlx
+	\cmd{ssh \vb{IP{\_}ADDRESS}}					& connect to \vb{IP{\_}ADDRESS} \hlx
+	\cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}		& connect to \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
+	\cmd{ssh-copy-id \vb{USER}@\vb{HOST}}			& add the key to \vb{HOST} as \vb{USER} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 % ---------- Package ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Package}} \\
 	\mytoprule
 	\cmd{apt-get update}					& synchronize package index files from sources \\
 	\cmd{apt-get upgrade}					& install latest versions of installed packages \\
-	\cmd{apt-get install \vb{PACKAGE}}	& install \vb{PACKAGE} \hlx
-	\cmd{dpkg -i \vb{PACKAGE.deb}}		& install a Debian package \vb{PACKAGE.deb} \hlx
+	\cmd{apt-get install \vb{PACKAGE}}		& install \vb{PACKAGE} \hlx
+	\cmd{dpkg -i \vb{PACKAGE.deb}}			& install a Debian package \vb{PACKAGE.deb} \hlx
 	\cmd{./configure}						& configure building settings \\
 	\cmd{make}								& build the program from source code \\
 	\cmd{make install}						& install the program \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- Secure Shell ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
-	\mytoprule
-	\cmd{ssh \vb{USER}@\vb{HOST}}					& connect to \vb{HOST} as \vb{USER} \hlx
-	\cmd{ssh \vb{IP{\_}ADDRESS}}						& connect to \vb{IP{\_}ADDRESS} \hlx
-	\cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}	& connect to \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
-	\cmd{ssh-copy-id \vb{USER}@\vb{HOST}}			& add the key to \vb{HOST} as \vb{USER} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -192,8 +208,8 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Searching}} \\
 	\mytoprule
-	\cmd{grep \vb{PATTERN} \vb{FILE}}			& search for \vb{PATTERN} in \vb{FILE} \hlx
-	\cmd{grep -r \vb{PATTERN} \vb{DIR}}			& recursively search for \vb{PATTERN} in \vb{DIR} \hlx
+	\cmd{grep \vb{PATTERN} \vb{FILE}}		& search for \vb{PATTERN} in \vb{FILE} \hlx
+	\cmd{grep -r \vb{PATTERN} \vb{DIR}}		& recursively search for \vb{PATTERN} in \vb{DIR} \hlx
 	\cmd{\vb{CMD} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{CMD}'s output \hlx
 	\cmd{locate \vb{FILENAME}}				& find all files whose name contain \vb{FILENAME} \\
 	\mybottomrule
@@ -225,17 +241,32 @@
 \end{tabularx}
 \spacebtwtables
 
-% ---------- .bashrc ---------- %
+% ---------- Miscellaneous ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{.bashrc}} \\
+	\multicolumn{1}{@{}l@{}}{\headbf{Miscellaneous}} \\
 	\mytoprule
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \\
+	Hitting \code{Tab} while typing a command, file name, and option will auto-complete it. \\
+	\code{sudo} (superuser do) runs command with elevated privilege. \\
+	\code{tar} (tape archive) deal with tape drives backup. \\
+	Appending \code{--help} after a command will print command usage \\
+	When simulating in ROS, remember \cmd{set use\_sim\_time true} and to append \code{{-}{-}clock}. \\
+	\mybottomrule
+\end{tabularx}
+
+\newpage
+
+% ---------- ROS Catkin Workspace ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Catkin Workspace}} \\
+	\mytoprule
+	\cmd{roscd \vb{PACKAGE}}						& change directory to \vb{PACKAGE} \hlx
+	\cmd{mkdir -p \textasciitilde/catkin\_ws/src}	& create a new catkin workspace \\
+	\cmd{cd \textasciitilde/catkin\_ws}				& \\
+	\cmd{catkin\_make}								& \hlx
+	\cmd{catkin build}								& build the whole workspace \\
+	\cmd{catkin build \vb{PACKAGE}}					& build \vb{PACKAGE} \\
+	\cmd{catkin clean}								& clean the whole workspace \\
+	\cmd{catkin clean \vb{PACKAGE}}					& clear \vb{PACKAGE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -264,6 +295,21 @@
 \end{tabularx}
 \spacebtwtables
 
+% ---------- ROS Service ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Service}} \\
+	\mytoprule
+	\cmd{rosservice list}							& list active services \hlx
+	\cmd{rosservice call \vb{SERVICE} \vb{ARGS}}	& call \vb{SERVICE} with \vb{ARGS} \hlx
+	\cmd{rosservice find \vb{TYPE}}					& find services with \vb{TYPE} \hlx
+	\cmd{rosservice info \vb{SERVICE}}				& print information about \vb{SERVICE} \hlx
+	\cmd{rosservice type \vb{SERVICE}}				& print type of \vb{SERVICE} \hlx
+	\cmd{rosservice uri \vb{SERVICE}}				& print uri of \vb{SERVICE} \hlx
+	\cmd{rossrv show \vb{TYPE}}						& print structure of \vb{TYPE} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 % ---------- ROS Topic ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Topic}} \\
@@ -276,22 +322,7 @@
 	\cmd{rostopic info \vb{TOPIC}}		& print information about \vb{TOPIC} \hlx
 	\cmd{rostopic pub \vb{TOPIC}}		& publish data to \vb{TOPIC} \hlx
 	\cmd{rostopic type\vb{TOPIC}}		& print type of \vb{TOPIC} \hlx
-	\cmd{rosmsg show \vb{TYPE}}}		& print structure of \vb{TYPE} \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- ROS Service ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Service}} \\
-	\mytoprule
-	\cmd{rosservice list}							& list active services \hlx
-	\cmd{rosservice call \vb{SERVICE} \vb{ARGS}}	& call \vb{SERVICE} with \vb{ARGS} \hlx
-	\cmd{rosservice find \vb{TYPE}}					& find services with \vb{TYPE} \hlx
-	\cmd{rosservice info \vb{SERVICE}}				& print information about \vb{SERVICE} \hlx
-	\cmd{rosservice type \vb{SERVICE}}				& print type of \vb{SERVICE} \hlx
-	\cmd{rosservice uri \vb{SERVICE}}				& print uri of \vb{SERVICE} \hlx
-	\cmd{rossrv show \vb{TYPE}}}					& print structure of \vb{TYPE} \\
+	\cmd{rosmsg show \vb{TYPE}}			& print structure of \vb{TYPE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -324,23 +355,6 @@
 \end{tabularx}
 \spacebtwtables
 
-% ---------- ROS Catkin Workspace ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Catkin Workspace}} \\
-	\mytoprule
-	\cmd{roscd \vb{PACKAGE}}		& change directory to \vb{PACKAGE} \hlx
-	\cmd{mkdir -p \textasciitilde/catkin\_ws/src}			& create a new catkin workspace \\
-	\cmd{cd \textasciitilde/catkin\_ws}			& \\
-	\cmd{catkin\_make}			& \hlx
-	\cmd{catkin build}			& build the whole workspace \\
-	\cmd{catkin build \vb{PACKAGE}}			& build \vb{PACKAGE} \\
-	\cmd{catkin clean}			& clean the whole workspace \\
-	\cmd{catkin clean \vb{PACKAGE}}			& clear \vb{PACKAGE} \\
-	\mybottomrule
-\end{tabularx}
-remember to source \textasciitilde/catkin\_ws/devel/setup.bash
-\spacebtwtables
-
 % ---------- ROS Packge Structure ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
@@ -371,52 +385,22 @@ remember to source \textasciitilde/catkin\_ws/devel/setup.bash
 	\cmd{rqt\_image\_view}	& visualize camera images \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
 
-% ---------- ROS Visualization ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Visualization}} \\
-	\mytoprule
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
+\vfill\null
+\columnbreak
 
 % ---------- TODO ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 	\multicolumn{1}{@{}l@{}}{\headbf{TODO}} \\
 	\mytoprule
-	ubuntu mono font for commands \hlx
-	tab auto-completion \hlx
-	tar explanation \\
-	is git reset unstage or reset? \\
-	simtime true\\
-	copyright\\
-	rosnode machine \\
-	column split\\
-	Cmakelist \\
-	ros launchfile \\
-	--help -h \\
-	path symbolic links\\
+	use ubuntumono font for commands \hlx
+	is git reset unstage or reset? \hlx
+	copyright \& reference \hlx
+	rosnode machine \hlx
+	CMakeList \hlx
+	launchfile explanation \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
-\textbf{Variable Declaration} VARIABLE stands for a variable whose name is VARIABLE. For example, FILE means a file named FILE. \\
-\textbf{sudo} sudo means super user do, elevated right granted \\
 \spacebtwtables
 
 \end{multicols*}

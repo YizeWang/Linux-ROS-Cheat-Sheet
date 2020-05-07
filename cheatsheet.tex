@@ -95,14 +95,9 @@
 	\mytoprule
 	\cmd{env}					& print environment variables \hlx
 	\cmd{date}					& print system date and time \hlx
-	\cmd{cal}					& print current month calendar \hlx
 	\cmd{uptime}				& print system uptime \hlx
-	\cmd{w}						& print online users \hlx
 	\cmd{whoami}				& print current user \hlx
-	\cmd{finger \vb{USER}}		& print information about \vb{USER} \hlx
 	\cmd{uname -a}				& print kernel information \hlx
-	\cmd{cat /proc/cpuinfo}		& print cpu information \hlx
-	\cmd{cat /proc/meminfo}		& print memory information \hlx
 	\cmd{man \vb{COMMAND}}		& print user manual of \vb{COMMAND} \hlx
 	\cmd{df}					& print disk usage \hlx
 	\cmd{du}					& print directory space usage \hlx
@@ -156,23 +151,31 @@
 \end{tabularx}
 \spacebtwtables
 
+% ---------- Linux Shell ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Linux Shell}} \\
+	\mytoprule
+	\code{\ctrlp \altp T}		& launch a new terminal \hlx
+	\code{\ctrlp C}				& kill the current process \hlx
+	\code{\ctrlp Z}				& suspend  the current process \\
+	\code{fg}					& resume the suspended process in foreground \\
+	\code{bg}					& resume the suspended process in background \hlx
+	\code{\ctrlp D}				& log out of the current session \hlx
+	\code{\ctrlp W}				& erase one word in the current line \hlx
+	\code{\ctrlp U}				& erase the whole current line \hlx
+	\code{\ctrlp R}				& reverse search in the previous commands \hlx
+	\code{!!}					& execute the last command \hlx
+	\code{exit}					& log out of the current session \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 % ---------- Terminator ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Terminator}} \\
 	\mytoprule
-	\cmd{\ctrlp \altp T}		& launch a new terminal \hlx
-	\cmd{\ctrlp C}				& kill the current process \hlx
-	\cmd{\ctrlp Z}				& suspend  the current process \\
-	\cmd{fg}					& resume the suspended process in foreground \\
-	\cmd{bg}					& resume the suspended process in background \hlx
-	\cmd{\ctrlp D}				& log out of the current session \hlx
-	\cmd{\ctrlp W}				& erase one word in the current line \hlx
-	\cmd{\ctrlp U}				& erase the whole current line \hlx
-	\cmd{\ctrlp R}				& reverse search in the previous commands \hlx
-	\cmd{!!}					& execute the last command \hlx
-	\cmd{exit}					& log out of the current session \hlx
-	\cmd{\ctrlp \shiftp E}		& split the window vertically vertically \hlx
-	\cmd{\ctrlp \shiftp O}		& split the window horizontally \\
+	\code{\ctrlp \shiftp E}		& split the window vertically \\
+	\code{\ctrlp \shiftp O}		& split the window horizontally \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

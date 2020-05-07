@@ -4,7 +4,8 @@ This repository contains a cheat sheet for frequently-used commands and knowledg
 
 ## Note
 
-Note that package `tikz` must be included after package `xcolor` to avoid tabular clash.
+- Note that package `tikz` must be included after package `xcolor` to avoid tabular clash.
+- The document should be built with `PdfLaTeX`.
 
 ## Reference
 

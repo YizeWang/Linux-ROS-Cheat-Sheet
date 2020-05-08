@@ -15,6 +15,7 @@
 \newcommand{\altp}{Alt$+$}
 \newcommand{\ctrlp}{Ctrl$+$}
 \newcommand{\shiftp}{Shift$+$}
+\newcommand{\cmt}[1]{\# #1}
 \newcommand{\code}[1]{\textbf{#1}}
 \newcommand{\cmd}[1]{\$ \textbf{#1}}
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
@@ -65,27 +66,28 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{File Commands}} \\
 	\mytoprule
-	\cmd{ls}						& list contents of current directory \hlx
+	\cmd{ls}						& list contents of current directory \\
 	\cmd{ls -a}						& list hidden contents of current directory \hlx
-	\cmd{cd \vb{DIR}}				& change working directory to \vb{DIR} \hlx
+	\cmd{cd \vb{DIR}}				& change working directory to \vb{DIR} \\
 	\cmd{cd}						& change working directory to home \hlx
 	\cmd{mkdir \vb{DIR}}			& create a directory named \vb{DIR} \hlx
 	\cmd{pwd}						& print working directory \hlx
-	\cmd{rm \vb{FILE}}				& remove \vb{FILE} \hlx
-	\cmd{rm -r \vb{DIR}}			& remove \vb{DIR} \hlx
-	\cmd{rm -f \vb{FILE}}			& force remove \vb{FILE} \hlx
+	\cmd{rm \vb{FILE}}				& remove \vb{FILE} \\
+	\cmd{rm -r \vb{DIR}}			& remove \vb{DIR} \\
+	\cmd{rm -f \vb{FILE}}			& force remove \vb{FILE} \\
 	\cmd{rm -rf \vb{DIR}}			& force remove \vb{DIR} \hlx
-	\cmd{cp \vb{FILE1} \vb{FILE2}}	& copy \vb{FILE1} to \vb{FILE2} \hlx
+	\cmd{cp \vb{FILE} \vb{DIR}}		& copy \vb{FILE} to \vb{DIR} \\
 	\cmd{cp -r \vb{DIR1} \vb{DIR2}}	& copy \vb{DIR1} to \vb{DIR2} recursively \hlx
-	\cmd{mv \vb{FILE1} \vb{FILE2}}	& move \vb{FILE1} to \vb{FILE2} \hlx
+	\cmd{mv \vb{FILE} \vb{DIR}}		& move \vb{FILE} to \vb{DIR} \hlx
 	\cmd{ln -s \vb{FILE} \vb{LINK}}	& create symbolic link \vb{LINK} to \vb{FILE} \hlx
 	\cmd{touch \vb{FILE}}			& create \vb{FILE} \hlx
-	\cmd{cat \vb{FILE}}				& view content of \vb{FILE} \hlx
+	\cmd{cat \vb{FILE}}				& view content of \vb{FILE} \\
 	\cmd{cat > \vb{FILE}}			& write input into \vb{FILE} \hlx
-	\cmd{more \vb{FILE}}			& print content of \vb{FILE} \hlx
-	\cmd{head \vb{FILE}}			& print the first 10 lines of \vb{FILE} \hlx
+	\cmd{more \vb{FILE}}			& print content of \vb{FILE} \\
+	\cmd{head \vb{FILE}}			& print the first 10 lines of \vb{FILE} \\
 	\cmd{tail \vb{FILE}}			& print the last 10 lines of \vb{FILE} \hlx
 	\cmd{gedit \vb{FILE}}			& edit \vb{FILE} using GUI text editor \\
+	\cmd{vim \vb{FILE}}				& edit \vb{FILE} using Vim \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -100,7 +102,8 @@
 		\cmd{man \vb{COMMAND}}		& print user manual of \vb{COMMAND} \hlx
 		\cmd{whereis \vb{APP}}		& print locations of \vb{APP} \hlx
 		\cmd{which \vb{APP}}		& print executable file of \vb{APP} \hlx
-		\cmd{ps}					& print currently running processes \hlx
+		\cmd{ps}					& print process status \\
+		\cmd{ps -aux}				& print all running process \hlx
 		\cmd{htop}					& print currently running processes and more \hlx
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}LTR@{}}
@@ -113,34 +116,6 @@
 									&\code{{|}}					& pipe  output of first command to second \\
 		\mybottomrule
 	\end{tabularx} } \\
-\end{tabularx}
-\spacebtwtables
-
-% ---------- Compression ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Compression}} \\
-	\mytoprule
-	\cmd{tar cf \vb{FILE.tar} \vb{FILES}}		& convert \vb{FILES} into \vb{FILE.tar} \hlx
-	\cmd{tar xf \vb{FILE.tar}}					& extract files from \vb{FILE.tar} \hlx
-	\cmd{tar czf \vb{FILE.tar.gz} \vb{FILES}}	& compress \vb{FILES} into \vb{FILE.tar.gz} using Gzip \hlx
-	\cmd{tar xfz \vb{FILE.tar.gz}}				& extract files from \vb{FILE.tar.gz} using Gzip \hlx
-	\cmd{gzip \vb{FILE}}						& compress \vb{FILE} and rename it as \vb{FILE.gz} \hlx
-	\cmd{gzip -d \vb{FILE.gz}}					& decompress \vb{FILE.gz} back to \vb{FILE} \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- Network ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Network}} \\
-	\mytoprule
-	\cmd{ip address}			& print all internet protocol addresses \hlx
-	\cmd{ping \vb{HOST}}		& ping \vb{HOST} and print results \hlx
-	\cmd{whois \vb{DOMAIN}}		& print information about \vb{DOMAIN} \hlx
-	\cmd{dig \vb{DOMAIN}}		& print DNS of \vb{DOMAIN} \hlx
-	\cmd{dig -x \vb{HOST}}		& reverse lookup \vb{HOST} \hlx
-	\cmd{wget \vb{FILE}}		& download \vb{FILE} \\
-	\mybottomrule
 \end{tabularx}
 \spacebtwtables
 
@@ -157,11 +132,15 @@
 	\code{\ctrlp W}				& erase one word in the current line \hlx
 	\code{\ctrlp U}				& erase the whole current line \hlx
 	\code{\ctrlp R}				& reverse search in the previous commands \hlx
+	\code{\ctrlp A}				& go to the beginning of the line \hlx
+	\code{\ctrlp E}				& go to the end of the line \hlx
 	\code{!!}					& execute the last command \hlx
 	\code{exit}					& log out of the current session \hlx
 	\code{clear}				& clear the terminal screen \\
 	\mybottomrule
 \end{tabularx}
+Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctrlp R} repeatedly. \\
+\code{\ctrlp A} is especially useful when you forget to add \cb{sudo} before the command.
 \spacebtwtables
 
 % ---------- Terminator ---------- %
@@ -207,8 +186,10 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Searching}} \\
 	\mytoprule
-	\cmd{grep \vb{PATTERN} \vb{FILE}}		& search for \vb{PATTERN} in \vb{FILE} \hlx
-	\cmd{grep -r \vb{PATTERN} \vb{DIR}}		& recursively search for \vb{PATTERN} in \vb{DIR} \hlx
+	\cmd{grep \vb{PATTERN} \vb{FILES}}		& search for \vb{PATTERN} in \vb{FILES} \\
+	\cmd{grep -r \vb{PATTERN} \vb{DIR}}		& search for \vb{PATTERN} recursively in \vb{DIR} \\
+	\cmd{grep -n \vb{PATTERN} \vb{FILES}}	& search for \vb{PATTERN} and print line numbers \\
+	\cmd{grep -C1 \vb{PATTERN} \vb{FILES}}	& search for \vb{PATTERN} and print 1-line context \hlx
 	\cmd{\vb{CMD} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{CMD}'s output \hlx
 	\cmd{locate \vb{FILE\_NAME}}			& find files whose name contain \vb{FILE\_NAME} \\
 	\mybottomrule
@@ -229,12 +210,12 @@
 	\cmd{git push}						& upload all local branch commits to GitHub \\
 	\cmd{git pull}						& update local branch from GitHub \hlx
 	\cmd{git log}						& list version history for current branch \\
-	\cmd{git log --follow \vb{FILE}}	& list version history for \vb{FILE} \\
+	\cmd{git log {-}{-}follow \vb{FILE}}	& list version history for \vb{FILE} \\
 	\cmd{git show \vb{COMMIT}}			& output content changes of \vb{COMMIT} \\
 	\cmd{git add \vb{FILE}}				& stage \vb{FILE} \\
 	\cmd{git commit -m "\vb{MESSAGE}"}	& commit staged file with \vb{MESSAGE} \hlx
 	\cmd{git reset \vb{FILE}}			& reset \vb{FILE} \\
-	\cmd{git reset --hard}				& reset all uncommitted changes \\
+	\cmd{git reset {-}{-}hard}				& reset all uncommitted changes \\
 	\cmd{git clean -fd}					& recursively force remove unstaged files \\
 	\mybottomrule
 \end{tabularx}
@@ -247,9 +228,21 @@
 	Hitting \code{Tab} while typing a command, file name, and option will auto-complete it. \\
 	\code{sudo} (superuser do) runs command with elevated privilege. \\
 	\code{tar} (tape archive) deal with tape drives backup. \\
-	Appending \code{--help} after a command will print command usage \\
-	When simulating in ROS, remember \cmd{set use\_sim\_time true} and to append \code{{-}{-}clock}. \\
-	Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctrlp R} repeatedly. \\
+	Appending \code{{-}{-}help} after a command will print command usage help. \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- Docker ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Docker}} \\
+	\mytoprule
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \hlx
+	\cmd{}			& \\
 	\mybottomrule
 \end{tabularx}
 \newpage
@@ -265,7 +258,7 @@
 	\cmd{catkin clean \vb{PACKAGE}}					& clear \vb{PACKAGE} \\
 	\mybottomrule
 \end{tabularx}
-Always remember to \cb{source ~/catkin\_ws/devel/setup.bash}.
+Always remember to \cb{\cmd{source ~/catkin\_ws/devel/setup.bash}}.
 \spacebtwtables
 
 % ---------- ROS Run ---------- %
@@ -281,6 +274,19 @@ Always remember to \cb{source ~/catkin\_ws/devel/setup.bash}.
 		run node \vb{EXECUTABLE} from \vb{PACKAGE} (with \vb{PARAM} set to \vb{VALUE}) \\
 		\mybottomrule
 	\end{tabularx} } \\
+\end{tabularx}
+\spacebtwtables
+
+% ---------- ROS Environmental Variables ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Environmental Variables}} \\
+	\mytoprule
+	\code{ROS\_ROOT}			& location of core ROS packages \hlx
+	\code{ROS\_MASTER\_URI}		& location of the master \hlx
+	\code{ROS\_PACKAGE\_PATH}	& locations for more ROS packages \hlx
+	\code{ROS\_HOSTNAME}		& network address of a node \hlx
+	\code{ROS\_IP}				& IP address of a node \\
+	\mybottomrule
 \end{tabularx}
 \spacebtwtables
 
@@ -355,6 +361,7 @@ Always remember to \cb{source ~/catkin\_ws/devel/setup.bash}.
 	\cmd{rosbag decompress \vb{BAG}}	& decompress \vb{BAG} using BZ2 \\
 	\mybottomrule
 \end{tabularx}
+When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to append \cb{\code{{-}{-}clock}}.
 \spacebtwtables
 
 % ---------- ROS Packge Structure ---------- %
@@ -388,27 +395,48 @@ Always remember to \cb{source ~/catkin\_ws/devel/setup.bash}.
 	\cmd{rqt\_graph}		& visualize computation graph \\
 	\mybottomrule
 \end{tabularx}
-
-\vfill\null
-\columnbreak
+\newpage
 
 % ---------- TODO ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 	\multicolumn{1}{@{}l@{}}{\headbf{TODO}} \\
 	\mytoprule
-	use ubuntumono font for commands \hlx
 	is git reset unstage or reset? \hlx
 	rosnode machine \hlx
 	CMakeList \hlx
-	Eigen \hlx
-	ROS programming \\
-	remove Compression sections if needed \\
-	remove Network sections if needed \\
-	grep \\
 	catkin build / clean / make \\
 	ros variable \\
 	\mybottomrule
 \end{tabularx}
+\spacebtwtables
+
+% ---------- Compression ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Compression}} \\
+	\mytoprule
+	\cmd{tar cf \vb{FILE.tar} \vb{FILES}}		& convert \vb{FILES} into \vb{FILE.tar} \hlx
+	\cmd{tar xf \vb{FILE.tar}}					& extract files from \vb{FILE.tar} \hlx
+	\cmd{tar czf \vb{FILE.tar.gz} \vb{FILES}}	& compress \vb{FILES} into \vb{FILE.tar.gz} using Gzip \hlx
+	\cmd{tar xfz \vb{FILE.tar.gz}}				& extract files from \vb{FILE.tar.gz} using Gzip \hlx
+	\cmd{gzip \vb{FILE}}						& compress \vb{FILE} and rename it as \vb{FILE.gz} \hlx
+	\cmd{gzip -d \vb{FILE.gz}}					& decompress \vb{FILE.gz} back to \vb{FILE} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- Network ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Network}} \\
+	\mytoprule
+	\cmd{ip address}			& print all internet protocol addresses \hlx
+	\cmd{ping \vb{HOST}}		& ping \vb{HOST} and print results \hlx
+	\cmd{whois \vb{DOMAIN}}		& print information about \vb{DOMAIN} \hlx
+	\cmd{dig \vb{DOMAIN}}		& print DNS of \vb{DOMAIN} \hlx
+	\cmd{dig -x \vb{HOST}}		& reverse lookup \vb{HOST} \hlx
+	\cmd{wget \vb{FILE}}		& download \vb{FILE} \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
 
 \end{multicols*}
 \end{document}

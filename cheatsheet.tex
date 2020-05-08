@@ -99,7 +99,8 @@
 		\cmd{man \vb{COMMAND}}		& print user manual of \vb{COMMAND} \hlx
 		\cmd{whereis \vb{APP}}		& print locations of \vb{APP} \hlx
 		\cmd{which \vb{APP}}		& print executable file of \vb{APP} \hlx
-		\cmd{htop}					& print currently running processes \hlx
+		\cmd{ps}					& print currently running processes \hlx
+		\cmd{htop}					& print currently running processes and more \hlx
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}LTR@{}}
 		path symbolic links			&\code{{.}}					& current directory \\
@@ -154,7 +155,7 @@
 	\code{\ctrlp D}				& log out of the current session \hlx
 	\code{\ctrlp W}				& erase one word in the current line \hlx
 	\code{\ctrlp U}				& erase the whole current line \hlx
-	\code{\ctrlp R}				& reverse search in the previous commands \hlx
+	\code{\ctrlp R}			& reverse search in the previous commands \hlx
 	\code{!!}					& execute the last command \hlx
 	\code{exit}					& log out of the current session \\
 	\mybottomrule
@@ -165,8 +166,10 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Terminator}} \\
 	\mytoprule
-	\code{\ctrlp \shiftp E}		& split the window vertically \\
-	\code{\ctrlp \shiftp O}		& split the window horizontally \\
+	\code{\ctrlp \shiftp E}		& split terminals vertically \hlx
+	\code{\ctrlp \shiftp O}		& split terminals horizontally \hlx
+	\code{\ctrlp \shiftp T}		& open a new tab \hlx
+	\code{\ctrlp \shiftp I}		& open a new window \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -205,7 +208,7 @@
 	\cmd{grep \vb{PATTERN} \vb{FILE}}		& search for \vb{PATTERN} in \vb{FILE} \hlx
 	\cmd{grep -r \vb{PATTERN} \vb{DIR}}		& recursively search for \vb{PATTERN} in \vb{DIR} \hlx
 	\cmd{\vb{CMD} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{CMD}'s output \hlx
-	\cmd{locate \vb{FILENAME}}				& find all files whose name contain \vb{FILENAME} \\
+	\cmd{locate \vb{FILE\_NAME}}			& find files whose name contain \vb{FILE\_NAME} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -244,6 +247,7 @@
 	\code{tar} (tape archive) deal with tape drives backup. \\
 	Appending \code{--help} after a command will print command usage \\
 	When simulating in ROS, remember \cmd{set use\_sim\_time true} and to append \code{{-}{-}clock}. \\
+	Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctrlp R} repeatedly. \\
 	\mybottomrule
 \end{tabularx}
 \newpage
@@ -376,6 +380,7 @@
 	\cmd{rqt\_plot}			& simple and lightweight plotting \\
 	\cmd{rqt\_bag}			& visualize content of a bag \\
 	\cmd{rqt\_image\_view}	& visualize camera images \\
+	\cmd{rqt\_graph}		& visualize computation graph \\
 	\mybottomrule
 \end{tabularx}
 
@@ -392,6 +397,9 @@
 	CMakeList \hlx
 	Eigen \hlx
 	ROS programming \\
+	remove Compression sections if needed \\
+	remove Network sections if needed \\
+	grep \\
 	\mybottomrule
 \end{tabularx}
 

@@ -20,6 +20,7 @@
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
 \newcommand{\mytoprule}{\toprule[0.5ex]}
 \newcommand{\mybottomrule}{\bottomrule[0.5ex]}
+\newcommand{\cb}[1]{\tikz[baseline]{\node[rectangle, rounded corners=0.5mm, text=black, fill=black!20, inner sep=1pt, anchor=base]{#1}}} % code box
 \newcommand{\vb}[1]{\tikz[baseline]{\node[rectangle, rounded corners=0.5mm, text=black, fill=black!20, inner sep=1pt, anchor=base]{\$#1}}} % variable box
 
 % document settings
@@ -155,9 +156,10 @@
 	\code{\ctrlp D}				& log out of the current session \hlx
 	\code{\ctrlp W}				& erase one word in the current line \hlx
 	\code{\ctrlp U}				& erase the whole current line \hlx
-	\code{\ctrlp R}			& reverse search in the previous commands \hlx
+	\code{\ctrlp R}				& reverse search in the previous commands \hlx
 	\code{!!}					& execute the last command \hlx
-	\code{exit}					& log out of the current session \\
+	\code{exit}					& log out of the current session \hlx
+	\code{clear}				& clear the terminal screen \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -238,9 +240,9 @@
 \end{tabularx}
 \spacebtwtables
 
-% ---------- Miscellaneous ---------- %
+% ---------- Tips ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{1}{@{}l@{}}{\headbf{Miscellaneous}} \\
+	\multicolumn{1}{@{}l@{}}{\headbf{Tips}} \\
 	\mytoprule
 	Hitting \code{Tab} while typing a command, file name, and option will auto-complete it. \\
 	\code{sudo} (superuser do) runs command with elevated privilege. \\
@@ -257,25 +259,28 @@
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Catkin Workspace}} \\
 	\mytoprule
 	\cmd{roscd \vb{PACKAGE}}						& change directory to \vb{PACKAGE} \hlx
-	\cmd{mkdir -p \textasciitilde/catkin\_ws/src}	& create a new catkin workspace \\
-	\cmd{cd \textasciitilde/catkin\_ws}				& \\
-	\cmd{catkin\_make}								& \hlx
 	\cmd{catkin build}								& build the whole workspace \\
 	\cmd{catkin build \vb{PACKAGE}}					& build \vb{PACKAGE} \\
 	\cmd{catkin clean}								& clean the whole workspace \\
 	\cmd{catkin clean \vb{PACKAGE}}					& clear \vb{PACKAGE} \\
 	\mybottomrule
 \end{tabularx}
+Always remember to \cb{source ~/catkin\_ws/devel/setup.bash}.
 \spacebtwtables
 
 % ---------- ROS Run ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Run}} \\
-	\mytoprule
-	\cmd{roscore}									& invoke the core of ros \hlx
-	\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE}}		& run \vb{EXECUTABLE} in \vb{PACKAGE} \hlx
-	\cmd{roslaunch \vb{PACKAGE} \vb{LAUNCHFILE}}	& launch \vb{LAUNCHFILE} in \vb{PACKAGE} \\
-	\mybottomrule
+\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+	{ \begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
+		\multicolumn{2}{@{}l@{}}{\headbf{ROS Run}} \\
+		\mytoprule
+		\cmd{roscore}									& invoke the core of ROS \hlx
+		\cmd{roslaunch \vb{PACKAGE} \vb{LAUNCHFILE}}	& launch \vb{LAUNCHFILE} in \vb{PACKAGE} \hlx
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+		\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE} (\vb{PARAM}:=\vb{VALUE}}) \\
+		run node \vb{EXECUTABLE} from \vb{PACKAGE} (with \vb{PARAM} set to \vb{VALUE}) \\
+		\mybottomrule
+	\end{tabularx} } \\
 \end{tabularx}
 \spacebtwtables
 
@@ -400,6 +405,8 @@
 	remove Compression sections if needed \\
 	remove Network sections if needed \\
 	grep \\
+	catkin build / clean / make \\
+	ros variable \\
 	\mybottomrule
 \end{tabularx}
 

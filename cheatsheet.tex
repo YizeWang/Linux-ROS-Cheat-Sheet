@@ -15,8 +15,8 @@
 \newcommand{\altp}{Alt$+$}
 \newcommand{\ctrlp}{Ctrl$+$}
 \newcommand{\shiftp}{Shift$+$}
-\newcommand{\cmd}[1]{\$ \textbf{#1}}
 \newcommand{\code}[1]{\textbf{#1}}
+\newcommand{\cmd}[1]{\$ \textbf{#1}}
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
 \newcommand{\mytoprule}{\toprule[0.5ex]}
 \newcommand{\mybottomrule}{\bottomrule[0.5ex]}
@@ -84,42 +84,33 @@
 	\cmd{more \vb{FILE}}			& print content of \vb{FILE} \hlx
 	\cmd{head \vb{FILE}}			& print the first 10 lines of \vb{FILE} \hlx
 	\cmd{tail \vb{FILE}}			& print the last 10 lines of \vb{FILE} \hlx
-	\cmd{gedit \vb{FILE}}			& edit \vb{FILE} \\
+	\cmd{gedit \vb{FILE}}			& edit \vb{FILE} using GUI text editor \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
 
 % ---------- System Info ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{System Info}} \\
-	\mytoprule
-	\cmd{env}					& print environment variables \hlx
-	\cmd{date}					& print system date and time \hlx
-	\cmd{uptime}				& print system uptime \hlx
-	\cmd{whoami}				& print current user \hlx
-	\cmd{uname -a}				& print kernel information \hlx
-	\cmd{man \vb{COMMAND}}		& print user manual of \vb{COMMAND} \hlx
-	\cmd{df}					& print disk usage \hlx
-	\cmd{du}					& print directory space usage \hlx
-	\cmd{free}					& print memory and swap usage \hlx
-	\cmd{whereis \vb{APP}}		& print locations of \vb{APP} \hlx
-	\cmd{which \vb{APP}}		& print print executable file of \vb{APP} \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- Linux Basics ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LTR@{}}
-	\multicolumn{3}{@{}l@{}}{\headbf{Linux Basics}} \\
-	\mytoprule
-	path symbolic links			&\code{.}					& current directory \\
-								&\code{..}					& parent directory \\
-								&\code{\textasciitilde}		& home directory \\
-								&\code{\textbackslash}		& root directory \hlx
-	output direction			&\code{>}					& to a file (rewrite) \\
-								&\code{{>}{>}}				& to a file (append) \\
-								&\code{|}					& pipe the output of first command to the second \\
-	\mybottomrule
+\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+	{ \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+		\multicolumn{2}{@{}l@{}}{\headbf{System Information}} \\
+		\mytoprule
+		\cmd{env}					& print environment variables \hlx
+		\cmd{date}					& print system date and time \hlx
+		\cmd{man \vb{COMMAND}}		& print user manual of \vb{COMMAND} \hlx
+		\cmd{whereis \vb{APP}}		& print locations of \vb{APP} \hlx
+		\cmd{which \vb{APP}}		& print executable file of \vb{APP} \hlx
+		\cmd{htop}					& print currently running processes \hlx
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}LTR@{}}
+		path symbolic links			&\code{{.}}					& current directory \\
+									&\code{{.}{.}}					& parent directory \\
+									&\code{\textasciitilde}		& home directory \\
+									&\code{\textbackslash}		& root directory \hlx
+		output direction			&\code{{>}}					& to a file (rewrite) \\
+									&\code{{>}{>}}				& to a file (append) \\
+									&\code{{|}}					& pipe  output of first command to second \\
+		\mybottomrule
+	\end{tabularx} } \\
 \end{tabularx}
 \spacebtwtables
 

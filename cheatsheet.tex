@@ -18,6 +18,7 @@
 \newcommand{\cmt}[1]{\# #1}
 \newcommand{\code}[1]{\textbf{#1}}
 \newcommand{\cmd}[1]{\$ \textbf{#1}}
+\newcommand{\tag}[1]{<#1>}
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
 \newcommand{\mytoprule}{\toprule[0.5ex]}
 \newcommand{\mybottomrule}{\bottomrule[0.5ex]}
@@ -42,6 +43,7 @@
 \newcolumntype{T}{>{\columncolor{white}}m{2em}}
 \newcolumntype{L}{>{\columncolor{white}[0pt][\tabcolsep]}X}
 \newcolumntype{R}{>{\columncolor{white}[\tabcolsep][0pt]}m{19em}}
+\newcolumntype{B}{>{\columncolor{white}[\tabcolsep][0pt]}m{25em}}
 \newcolumntype{S}{>{\columncolor{white}[\tabcolsep][0pt]}m{16em}}
 
 \begin{document}
@@ -61,35 +63,34 @@
 \end{mdframed}
 
 \scriptsize
-\bigskip
 
 % ---------- File Commands ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{File Commands}} \\
 	\mytoprule
-	\cmd{ls}						& list contents of current directory \\
-	\cmd{ls -a}						& list hidden contents of current directory \hlx
-	\cmd{cd \vb{DIR}}				& change working directory to \vb{DIR} \\
-	\cmd{cd}						& change working directory to home \hlx
-	\cmd{mkdir \vb{DIR}}			& create a directory named \vb{DIR} \hlx
-	\cmd{pwd}						& print working directory \hlx
-	\cmd{rm \vb{FILE}}				& remove \vb{FILE} \\
-	\cmd{rm -r \vb{DIR}}			& remove \vb{DIR} \\
-	\cmd{rm -f \vb{FILE}}			& force remove \vb{FILE} \\
-	\cmd{rm -rf \vb{DIR}}			& force remove \vb{DIR} \hlx
-	\cmd{cp \vb{FILE} \vb{DIR}}		& copy \vb{FILE} to \vb{DIR} \\
-	\cmd{cp -r \vb{DIR1} \vb{DIR2}}	& copy \vb{DIR1} to \vb{DIR2} recursively \hlx
-	\cmd{mv \vb{FILE} \vb{DIR}}		& move \vb{FILE} to \vb{DIR} \hlx
-	\cmd{ln -s \vb{FILE} \vb{LINK}}	& create symbolic link \vb{LINK} to \vb{FILE} \hlx
-	\cmd{touch \vb{FILE}}			& create \vb{FILE} \hlx
-	\cmd{cat \vb{FILE}}				& view content of \vb{FILE} \\
-	\cmd{cat > \vb{FILE}}			& write input into \vb{FILE} \hlx
-	\cmd{echo \vb{STRING}/\vb{VAR}}	& print \vb{STRING}/value of \vb{VAR} \\
-	\cmd{more \vb{FILE}}			& print content of \vb{FILE} \\
-	\cmd{head \vb{FILE}}			& print the first 10 lines of \vb{FILE} \\
-	\cmd{tail \vb{FILE}}			& print the last 10 lines of \vb{FILE} \hlx
-	\cmd{gedit \vb{FILE}}			& edit \vb{FILE} using GUI text editor \\
-	\cmd{vim \vb{FILE}}				& edit \vb{FILE} using Vim \\
+	\cmd{ls}									& list contents of the current directory \\
+	\cmd{ls -a}									& list hidden contents of the current directory \hlx
+	\cmd{cd}									& change the working directory to home \\
+	\cmd{cd \vb{DIR}}							& change the working directory to \vb{DIR} \hlx
+	\cmd{mkdir \vb{DIR}}						& make a new directory named \vb{DIR} \hlx
+	\cmd{pwd}									& print the working directory \hlx
+	\cmd{rm \vb{FILE}}							& remove \vb{FILE} \\
+	\cmd{rm -r \vb{DIR}}						& remove \vb{DIR} recursively \\
+	\cmd{rm -f \vb{FILE}}						& force remove \vb{FILE} \\
+	\cmd{rm -rf \vb{DIR}}						& force remove \vb{DIR} recursively \hlx
+	\cmd{cp \vb{FILE1} \vb{FILE2}/\vb{DIR}}		& copy \vb{FILE1} to \vb{FILE2}/\vb{DIR} \\
+	\cmd{cp -r \vb{DIR1} \vb{DIR2}}				& copy \vb{DIR1} to \vb{DIR2} recursively \hlx
+	\cmd{mv \vb{FILE1} \vb{FILE2}/\vb{DIR}}		& move \vb{FILE1} to \vb{FILE2}/\vb{DIR} \hlx
+	\cmd{ln -s \vb{FILE} \vb{LINK}}				& create a symbolic link \vb{LINK} to \vb{FILE} \hlx
+	\cmd{touch \vb{FILE}}						& create \vb{FILE} \hlx
+	\cmd{cat \vb{FILE}}							& view content of \vb{FILE} \\
+	\cmd{cat > \vb{FILE}}						& write input into \vb{FILE} \hlx
+	\cmd{echo \vb{STRING}/\vb{VAR}}				& print \vb{STRING}/value of \vb{VAR} \\
+	\cmd{more \vb{FILE}}						& print content of \vb{FILE} \\
+	\cmd{head \vb{FILE}}						& print the first 10 lines of \vb{FILE} \\
+	\cmd{tail \vb{FILE}}						& print the last 10 lines of \vb{FILE} \hlx
+	\cmd{gedit \vb{FILE}}						& edit \vb{FILE} using GUI text editor \\
+	\cmd{vim \vb{FILE}}							& edit \vb{FILE} using Vim \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -119,7 +120,10 @@
 		\mybottomrule
 	\end{tabularx} } \\
 \end{tabularx}
-\spacebtwtables
+
+\vspace{0pt}
+\columnbreak
+\vspace{0pt}
 
 % ---------- Linux Shell ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -161,9 +165,9 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
 	\mytoprule
-	\cmd{ssh \vb{USER}@\vb{HOST}}					& connect to \vb{HOST} as \vb{USER} \hlx
-	\cmd{ssh \vb{IP{\_}ADDRESS}}					& connect to \vb{IP{\_}ADDRESS} \hlx
-	\cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}		& connect to \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
+	\cmd{ssh \vb{USER}@\vb{HOST}}					& connect \vb{HOST} as \vb{USER} \hlx
+	\cmd{ssh \vb{IP{\_}ADDRESS}}					& connect \vb{IP{\_}ADDRESS} \hlx
+	\cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}		& connect \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
 	\cmd{ssh-copy-id \vb{USER}@\vb{HOST}}			& add the key to \vb{HOST} as \vb{USER} \\
 	\mybottomrule
 \end{tabularx}
@@ -196,7 +200,10 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 	\cmd{locate \vb{FILE\_NAME}}			& find files whose name contain \vb{FILE\_NAME} \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+
+\vspace{0pt}
+\columnbreak
+\vspace{0pt}
 
 % ---------- Git ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -223,18 +230,6 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 \end{tabularx}
 \spacebtwtables
 
-% ---------- Tips ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{1}{@{}l@{}}{\headbf{Tips}} \\
-	\mytoprule
-	Hitting \code{Tab} while typing a command, file name, and option will auto-complete it. \\
-	\code{sudo} (superuser do) runs command with elevated privilege. \\
-	\code{tar} (tape archive) deal with tape drives backup. \\
-	Appending \code{{-}{-}help} after a command will print command usage help. \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
 % ---------- Docker ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Docker}} \\
@@ -247,24 +242,39 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 	\cmd{}			& \\
 	\mybottomrule
 \end{tabularx}
-\newpage
+\spacebtwtables
+
+% ---------- Tips ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{1}{@{}l@{}}{\headbf{Tips}} \\
+	\mytoprule
+	Hitting \code{Tab} while typing a command, file name, and option will auto-complete it. \\
+	\code{sudo} (superuser do) runs command with elevated privilege. \\
+	\code{tar} (tape archive) deal with tape drives backup. \\
+	Appending \code{{-}{-}help} after a command will print command usage help. \\
+	\mybottomrule
+\end{tabularx}
+
+\vfill\null
+\columnbreak
+\vspace{0pt}
 
 % ---------- ROS Catkin Workspace ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Catkin Workspace}} \\
 	\mytoprule
-	\cmd{roscd \vb{PACKAGE}}						& change directory to \vb{PACKAGE} \hlx
-	\cmd{catkin build}								& build the whole workspace \\
-	\cmd{catkin build \vb{PACKAGE}}					& build \vb{PACKAGE} \\
-	\cmd{catkin clean}								& clean the whole workspace \\
-	\cmd{catkin clean \vb{PACKAGE}}					& clear \vb{PACKAGE} \\
-	\cmd{catkin config \vb{arg1}}					& \hlx
-	\cmd{wstool init}								& \\
-	\cmd{wstool merge \vb{arg1}}					& \\
-	\cmd{wstool up}									& \\
+	\cmd{roscd \vb{PACKAGE}}			& change directory to \vb{PACKAGE}'s location \hlx
+	\cmd{catkin build}					& build the whole workspace \\
+	\cmd{catkin build \vb{PACKAGE}}		& build \vb{PACKAGE} \\
+	\cmd{catkin clean}					& clean the whole workspace \\
+	\cmd{catkin clean \vb{PACKAGE}}		& clean \vb{PACKAGE} \\
+	\cmd{catkin config \vb{OPTIONS}}	& configure catkin workspace with \vb{OPTIONS} \hlx
+	\cmd{wstool init}					& set up current directory as workspace \\
+	\cmd{wstool merge}					& merge workspace with another config set \\
+	\cmd{wstool up}						& update configuration elements \\
 	\mybottomrule
 \end{tabularx}
-Always remember to \cb{\cmd{source ~/catkin\_ws/devel/setup.bash}}.
+Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}.
 \spacebtwtables
 
 % ---------- ROS Run ---------- %
@@ -283,19 +293,6 @@ Always remember to \cb{\cmd{source ~/catkin\_ws/devel/setup.bash}}.
 \end{tabularx}
 \spacebtwtables
 
-% ---------- ROS Environmental Variables ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Environmental Variables}} \\
-	\mytoprule
-	\code{ROS\_ROOT}			& location of core ROS packages \hlx
-	\code{ROS\_MASTER\_URI}		& location of the master \hlx
-	\code{ROS\_PACKAGE\_PATH}	& locations for more ROS packages \hlx
-	\code{ROS\_HOSTNAME}		& network address of a node \hlx
-	\code{ROS\_IP}				& IP address of a node \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
 % ---------- ROS Node ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Node}} \\
@@ -304,22 +301,21 @@ Always remember to \cb{\cmd{source ~/catkin\_ws/devel/setup.bash}}.
 	\cmd{rosnode list}					& list active nodes \hlx
 	\cmd{rosnode info \vb{NODE}}		& print information about \vb{NODE} \hlx
 	\cmd{rosnode machine}				& list nodes running on the machine \hlx
-	\cmd{rosnode kill \vb{NODE}}		& kill a running node \\
+	\cmd{rosnode kill \vb{NODE}}		& kill the running \vb{NODE} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
 
-% ---------- ROS Service ---------- %
+% ---------- ROS Parameter ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Service}} \\
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Parameter}} \\
 	\mytoprule
-	\cmd{rosservice list}							& list active services \hlx
-	\cmd{rosservice call \vb{SERVICE} \vb{ARGS}}	& call \vb{SERVICE} with \vb{ARGS} \hlx
-	\cmd{rosservice find \vb{TYPE}}					& find services with \vb{TYPE} \hlx
-	\cmd{rosservice info \vb{SERVICE}}				& print information about \vb{SERVICE} \hlx
-	\cmd{rosservice type \vb{SERVICE}}				& print type of \vb{SERVICE} \hlx
-	\cmd{rosservice uri \vb{SERVICE}}				& print uri of \vb{SERVICE} \hlx
-	\cmd{rossrv show \vb{TYPE}}						& print structure of \vb{TYPE} \\
+	\cmd{rosparam list}						& list all parameter names \hlx
+	\cmd{rosparam set \vb{PARAM} \vb{VAL}}	& set value of \vb{PARAM} to \vb{VAL} \hlx
+	\cmd{rosparam get \vb{PARAM}}			& print value of \vb{PARAM} \hlx
+	\cmd{rosparam load \vb{YAML}}			& load parameters from \vb{YAML} \hlx
+	\cmd{rosparam dump \vb{YAML}}			& dump parameters to \vb{YAML} \hlx
+	\cmd{rosparam delete \vb{PARAM}}		& delete \vb{PARAM} \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -331,26 +327,42 @@ Always remember to \cb{\cmd{source ~/catkin\_ws/devel/setup.bash}}.
 	\cmd{rostopic list}					& print information about active topics \hlx
 	\cmd{rostopic bw \vb{TOPIC}}		& display bandwidth used by \vb{TOPIC} \hlx
 	\cmd{rostopic echo \vb{TOPIC}}		& print messages from \vb{TOPIC}\hlx
-	\cmd{rostopic find \vb{TYPE}}		& find topics with \vb{TYPE} \hlx
+	\cmd{rostopic find \vb{TYPE}}		& find topics of \vb{TYPE} \hlx
 	\cmd{rostopic hz \vb{TOPIC}}		& display publishing rate of \vb{TOPIC} \hlx
 	\cmd{rostopic info \vb{TOPIC}}		& print information about \vb{TOPIC} \hlx
 	\cmd{rostopic pub \vb{TOPIC}}		& publish data to \vb{TOPIC} \hlx
-	\cmd{rostopic type\vb{TOPIC}}		& print type of \vb{TOPIC} \hlx
+	\cmd{rostopic type \vb{TOPIC}}		& print type of \vb{TOPIC} \hlx
 	\cmd{rosmsg show \vb{TYPE}}			& print structure of \vb{TYPE} \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
 
-% ---------- ROS Parameter ---------- %
+\vspace{0pt}
+\columnbreak
+\vspace{0pt}
+
+% ---------- ROS Service ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Parameter}} \\
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Service}} \\
 	\mytoprule
-	\cmd{rosparam list}						& list all parameter names \hlx
-	\cmd{rosparam set \vb{PARAM} \vb{VAL}}	& set \vb{PARAM} to \vb{VAL} \hlx
-	\cmd{rosparam get \vb{PARAM}}			& print value of \vb{PARAM} \hlx
-	\cmd{rosparam load \vb{YAML}}			& load parameters from \vb{YAML} \hlx
-	\cmd{rosparam dump \vb{YAML}}			& dump parameters to \vb{YAML} \hlx
-	\cmd{rosparam delete \vb{PARAM}}		& delete \vb{PARAM} \\
+	\cmd{rosservice list}							& list active services \hlx
+	\cmd{rosservice call \vb{SERVICE} \vb{ARGS}}	& call \vb{SERVICE} with \vb{ARGS} \hlx
+	\cmd{rosservice find \vb{TYPE}}					& find services of \vb{TYPE} \hlx
+	\cmd{rosservice info \vb{SERVICE}}				& print information about \vb{SERVICE} \hlx
+	\cmd{rosservice type \vb{SERVICE}}				& print type of \vb{SERVICE} \hlx
+	\cmd{rosservice uri \vb{SERVICE}}				& print uri of \vb{SERVICE} \hlx
+	\cmd{rossrv show \vb{TYPE}}						& print structure of \vb{TYPE} \\
+	\mybottomrule
+\end{tabularx}
+
+% ---------- ROS Environmental Variables ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Environmental Variables}} \\
+	\mytoprule
+	\code{ROS\_ROOT}			& location of core ROS packages \hlx
+	\code{ROS\_MASTER\_URI}		& location of the master \hlx
+	\code{ROS\_PACKAGE\_PATH}	& location for more ROS packages \hlx
+	\code{ROS\_HOSTNAME}		& network address of a node \hlx
+	\code{ROS\_IP}				& IP address of a node \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -370,24 +382,6 @@ Always remember to \cb{\cmd{source ~/catkin\_ws/devel/setup.bash}}.
 When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to append \cb{\code{{-}{-}clock}}.
 \spacebtwtables
 
-% ---------- ROS Packge Structure ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
-	\mytoprule
-	\code{package.xml}		& manifest, dependencies and plugins \hlx
-	\code{CMakeLists.txt}	& description of compilation procedure \hlx
-	\code{src/}				& C and C++ source codes \hlx
-	\code{build/}			& generated makefiles and support files \hlx
-	\code{devel/}			& compiled binaries, libraries, headers \hlx
-	\code{include/}			& C and C++ header files \hlx
-	\code{scripts/}			& Python and bash scripts \hlx
-	\code{config/}			& ymal configuration files \hlx
-	\code{cfg/}				& dynamics reconfigure scripts \hlx
-	\code{launch/}			& launch files \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
 % ---------- ROS Visualization Tools ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Visualization Tools}} \\
@@ -403,13 +397,39 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 \end{tabularx}
 \spacebtwtables
 
-% ---------- ROS Launch File ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Launch File}} \\
+% ---------- ROS Launch File Elements ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LB@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Launch File Elements}} \\
 	\mytoprule
-	& \\
-	& \\
-	& \\
+	\tag{node}& launch a node \hlx
+	\tag{param}& set a parameter on the parameter server \hlx
+	\tag{remap}& declare a name mapping \hlx
+	\tag{resparam}& set ROS parameters for the launch \hlx
+	\tag{include}& include other roslaunch files \hlx
+	\tag{env}& specify an environment variable for launched nodes \hlx
+	\tag{arg}& declare an argument \hlx
+	\tag{group}& group enclosed elements sharing a namespace or remap \\
+	\mybottomrule
+\end{tabularx}
+
+\vspace{0pt}
+\columnbreak
+\vspace{0pt}
+
+% ---------- ROS Packge Structure ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
+	\mytoprule
+	\code{package.xml}		& manifest, dependencies and plugins \hlx
+	\code{CMakeLists.txt}	& description of compilation procedure \hlx
+	\code{src/}				& C and C++ source codes \hlx
+	\code{build/}			& generated makefiles and support files \hlx
+	\code{devel/}			& compiled binaries, libraries, headers \hlx
+	\code{include/}			& C and C++ header files \hlx
+	\code{scripts/}			& Python and bash scripts \hlx
+	\code{config/}			& ymal configuration files \hlx
+	\code{cfg/}				& dynamics reconfigure scripts \hlx
+	\code{launch/}			& launch files \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -446,23 +466,8 @@ Always remember to charge your SMB after each use.
 \end{tabularx}
 \spacebtwtables
 
+\vfill\null
 \newpage
-
-% ---------- TODO ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-	\multicolumn{1}{@{}l@{}}{\headbf{TODO}} \\
-	\mytoprule
-	is git reset unstage or reset? \hlx
-	rosnode machine \hlx
-	CMakeList \hlx
-	what should I annotate on \cmd{catkin clean}? \\
-	What does TMUX mean? Replace Terminator section? \\
-	publisher / subscriber    service / client \\
-	ros variable okay? \\
-	what should i do on smb section \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
 
 % ---------- Compression ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -490,7 +495,8 @@ Always remember to charge your SMB after each use.
 	\cmd{wget \vb{FILE}}		& download \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+
+\vspace{0pt}
 
 \end{multicols*}
 \end{document}

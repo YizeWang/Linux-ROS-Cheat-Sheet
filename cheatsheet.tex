@@ -21,6 +21,7 @@
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
 \newcommand{\mytoprule}{\toprule[0.5ex]}
 \newcommand{\mybottomrule}{\bottomrule[0.5ex]}
+\newcommand{\white}[1]{{\textcolor{white}{#1}}}
 \newcommand{\cb}[1]{\tikz[baseline]{\node[rectangle, rounded corners=0.5mm, text=black, fill=black!20, inner sep=1pt, anchor=base]{#1}}} % code box
 \newcommand{\vb}[1]{\tikz[baseline]{\node[rectangle, rounded corners=0.5mm, text=black, fill=black!20, inner sep=1pt, anchor=base]{\$#1}}} % variable box
 
@@ -276,7 +277,7 @@ Always remember to \cb{\cmd{source ~/catkin\_ws/devel/setup.bash}}.
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 		\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE} (\vb{PARAM}:=\vb{VALUE}}) \\
-		run node \vb{EXECUTABLE} from \vb{PACKAGE} (with \vb{PARAM} set to \vb{VALUE}) \\
+		\white{\cmd{}}run node \vb{EXECUTABLE} from \vb{PACKAGE} (with \vb{PARAM} set to \vb{VALUE}) \\ % find a way to replace \white with \phantom
 		\mybottomrule
 	\end{tabularx} } \\
 \end{tabularx}
@@ -433,24 +434,14 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 Always remember to charge your SMB after each use.
 \spacebtwtables
 
-% ---------- Quaternion ---------- %
+% ---------- ROS TF2 Structure ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Quaternion}} \\
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2 Structure}} \\
 	\mytoprule
-	& \\
-	& \\
-	& \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- ROS TF2 ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2}} \\
-	\mytoprule
-	& \\
-	& \\
-	& \\
+	stamp							& time stamp of transform \\
+	frame\_id \& child\_frame\_id	& id of parent and child frame \hlx
+	translation						& x, y, z \\
+	rotation (quaternion)			& x, y, z, w \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -468,6 +459,7 @@ Always remember to charge your SMB after each use.
 	What does TMUX mean? Replace Terminator section? \\
 	publisher / subscriber    service / client \\
 	ros variable okay? \\
+	what should i do on smb section \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

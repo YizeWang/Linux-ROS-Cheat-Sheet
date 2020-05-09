@@ -13,6 +13,10 @@ This repository contains a cheat sheet for frequently-used commands and knowledg
 - MRS Cheat Sheet: https://github.com/klaxalk/mrs-cheatsheet
 - FOSSwire Cheat Sheet: https://files.fosswire.com/2007/08/fwunixref.pdf
 
+## Maintainer
+
+Current maintainer is Yize Wang - `yizwang@student.ethz.ch`
+
 ## Acknowledgement
 
 Thank Thomas Mantel for inspiration and instructions.

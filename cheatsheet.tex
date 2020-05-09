@@ -83,6 +83,7 @@
 	\cmd{touch \vb{FILE}}			& create \vb{FILE} \hlx
 	\cmd{cat \vb{FILE}}				& view content of \vb{FILE} \\
 	\cmd{cat > \vb{FILE}}			& write input into \vb{FILE} \hlx
+	\cmd{echo \vb{STRING}/\vb{VAR}}	& print \vb{STRING}/value of \vb{VAR} \\
 	\cmd{more \vb{FILE}}			& print content of \vb{FILE} \\
 	\cmd{head \vb{FILE}}			& print the first 10 lines of \vb{FILE} \\
 	\cmd{tail \vb{FILE}}			& print the last 10 lines of \vb{FILE} \hlx
@@ -256,6 +257,10 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 	\cmd{catkin build \vb{PACKAGE}}					& build \vb{PACKAGE} \\
 	\cmd{catkin clean}								& clean the whole workspace \\
 	\cmd{catkin clean \vb{PACKAGE}}					& clear \vb{PACKAGE} \\
+	\cmd{catkin config \vb{arg1}}					& \hlx
+	\cmd{wstool init}								& \\
+	\cmd{wstool merge \vb{arg1}}					& \\
+	\cmd{wstool up}									& \\
 	\mybottomrule
 \end{tabularx}
 Always remember to \cb{\cmd{source ~/catkin\_ws/devel/setup.bash}}.
@@ -395,6 +400,61 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 	\cmd{rqt\_graph}		& visualize computation graph \\
 	\mybottomrule
 \end{tabularx}
+\spacebtwtables
+
+% ---------- ROS Launch File ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Launch File}} \\
+	\mytoprule
+	& \\
+	& \\
+	& \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- SMB Workspace ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{SMB Workspace}} \\
+	\mytoprule
+	Key Packages						& \\
+	\code{rovio}						& robust visual inertial odometry framework \\
+	\code{maplab}						& visual-inertial mapping framework \\
+	\code{voxblox}						& volumetric mapping library \\
+	\code{apriltag}						& visual fiducial system \\
+	\code{elevation\_mapping}			& produce elevation map around robot \\
+	\code{traversability\_estimation}	& traversability mapping for rough terrain \\
+	\code{icp\_mapper}					& iterative closest point based slam system \\
+	\code{smb\_local\_planner}			& path planning system for SMB \hlx
+	Configuration						& \hlx
+	Launch Files						& \\
+	\mybottomrule
+\end{tabularx}
+Always remember to charge your SMB after each use.
+\spacebtwtables
+
+% ---------- Quaternion ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Quaternion}} \\
+	\mytoprule
+	& \\
+	& \\
+	& \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- ROS TF2 ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2}} \\
+	\mytoprule
+	& \\
+	& \\
+	& \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 \newpage
 
 % ---------- TODO ---------- %
@@ -404,8 +464,10 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 	is git reset unstage or reset? \hlx
 	rosnode machine \hlx
 	CMakeList \hlx
-	catkin build / clean / make \\
-	ros variable \\
+	what should I annotate on \cmd{catkin clean}? \\
+	What does TMUX mean? Replace Terminator section? \\
+	publisher / subscriber    service / client \\
+	ros variable okay? \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables

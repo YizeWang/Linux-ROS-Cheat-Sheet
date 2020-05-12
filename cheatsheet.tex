@@ -111,9 +111,9 @@
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}LTR@{}}
 		path symbolic links			&\code{{.}}					& current directory \\
-									&\code{{.}{.}}					& parent directory \\
+									&\code{{.}{.}}				& parent directory \\
 									&\code{\textasciitilde}		& home directory \\
-									&\code{\textbackslash}		& root directory \hlx
+									&\code{/}					& root directory \hlx
 		output direction			&\code{{>}}					& to a file (rewrite) \\
 									&\code{{>}{>}}				& to a file (append) \\
 									&\code{{|}}					& pipe  output of first command to second \\
@@ -209,23 +209,23 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Git}} \\
 	\mytoprule
-	\cmd{git clone \vb{URL}}			& clone the repository from \vb{URL} \hlx
-	\cmd{git status}					& print current branch status \vb{BRANCH} \\
-	\cmd{git branch \vb{BRANCH}}		& create a new branch named \vb{BRANCH} \\
-	\cmd{git checkout \vb{BRANCH}}		& switch to the branch named \vb{BRANCH} \\
-	\cmd{git merge \vb{BRANCH}}			& combine \vb{BRANCH} into the current one \hlx
-	\cmd{git fetch}						& download all history from GitHub \\
-	\cmd{git merge}						& combine remote branches into local branch \\
-	\cmd{git push}						& upload all local branch commits to GitHub \\
-	\cmd{git pull}						& update local branch from GitHub \hlx
-	\cmd{git log}						& list version history for current branch \\
+	\cmd{git clone \vb{URL}}				& clone the repository from \vb{URL} \hlx
+	\cmd{git status}						& print current branch status \vb{BRANCH} \\
+	\cmd{git branch \vb{BRANCH}}			& create a new branch named \vb{BRANCH} \\
+	\cmd{git checkout \vb{BRANCH}}			& switch to the branch named \vb{BRANCH} \\
+	\cmd{git merge \vb{BRANCH}}				& combine \vb{BRANCH} into the current one \hlx
+	\cmd{git fetch}							& download all history from GitHub \\
+	\cmd{git merge}							& combine remote branches into local branch \\
+	\cmd{git push}							& upload all local branch commits to GitHub \\
+	\cmd{git pull}							& update local branch from GitHub \hlx
+	\cmd{git log}							& list version history for current branch \\
 	\cmd{git log {-}{-}follow \vb{FILE}}	& list version history for \vb{FILE} \\
-	\cmd{git show \vb{COMMIT}}			& output content changes of \vb{COMMIT} \\
-	\cmd{git add \vb{FILE}}				& stage \vb{FILE} \\
-	\cmd{git commit -m "\vb{MESSAGE}"}	& commit staged file with \vb{MESSAGE} \hlx
-	\cmd{git reset \vb{FILE}}			& reset \vb{FILE} \\
+	\cmd{git show \vb{COMMIT}}				& output content changes of \vb{COMMIT} \\
+	\cmd{git add \vb{FILE}}					& stage \vb{FILE} \\
+	\cmd{git commit -m "\vb{MESSAGE}"}		& commit staged file with \vb{MESSAGE} \hlx
+	\cmd{git reset \vb{FILE}}				& reset \vb{FILE} \\
 	\cmd{git reset {-}{-}hard}				& reset all uncommitted changes \\
-	\cmd{git clean -fd}					& recursively force remove unstaged files \\
+	\cmd{git clean -fd}						& recursively force remove unstaged files \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -267,7 +267,6 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 	\cmd{catkin build}					& build the whole workspace \\
 	\cmd{catkin build \vb{PACKAGE}}		& build \vb{PACKAGE} \\
 	\cmd{catkin clean}					& clean the whole workspace \\
-	\cmd{catkin clean \vb{PACKAGE}}		& clean \vb{PACKAGE} \\
 	\cmd{catkin config \vb{OPTIONS}}	& configure catkin workspace with \vb{OPTIONS} \hlx
 	\cmd{wstool init}					& set up current directory as workspace \\
 	\cmd{wstool merge}					& merge workspace with another config set \\
@@ -404,7 +403,7 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 	\tag{node}& launch a node \hlx
 	\tag{param}& set a parameter on the parameter server \hlx
 	\tag{remap}& declare a name mapping \hlx
-	\tag{resparam}& set ROS parameters for the launch \hlx
+	\tag{rosparam}& set ROS parameters for the launch \hlx
 	\tag{include}& include other roslaunch files \hlx
 	\tag{env}& specify an environment variable for launched nodes \hlx
 	\tag{arg}& declare an argument \hlx

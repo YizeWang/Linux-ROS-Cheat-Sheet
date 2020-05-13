@@ -57,7 +57,7 @@
 	ETH Robotics Summer School \\
 	Linux \& ROS Cheat Sheet \\
 	\bigskip
-	\footnotesize Author: Yize Wang \\
+	\footnotesize Autonomous Systems Lab \\
 	\footnotesize Last Updated: \today
 \end{center}
 \end{mdframed}
@@ -69,9 +69,10 @@
 	\multicolumn{2}{@{}l@{}}{\headbf{File Commands}} \\
 	\mytoprule
 	\cmd{ls}									& list contents of the current directory \\
-	\cmd{ls -a}									& list hidden contents of the current directory \hlx
-	\cmd{cd}									& change the working directory to home \\
-	\cmd{cd \vb{DIR}}							& change the working directory to \vb{DIR} \hlx
+	\cmd{ls -al}								& list hidden contents of the current directory \hlx
+	\cmd{cd}									& change the directory to home \\
+	\cmd{cd -}									& change the directory to the previous one \\
+	\cmd{cd \vb{DIR}}							& change the directory to \vb{DIR} \hlx
 	\cmd{mkdir \vb{DIR}}						& make a new directory named \vb{DIR} \hlx
 	\cmd{pwd}									& print the working directory \hlx
 	\cmd{rm \vb{FILE}}							& remove \vb{FILE} \\
@@ -161,6 +162,15 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 \end{tabularx}
 \spacebtwtables
 
+% ---------- Terminal Multiplexer (TMUX) ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Terminal Multiplexer (TMUX)}} \\
+	\mytoprule
+							& \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 % ---------- Secure Shell ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
@@ -177,16 +187,19 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Package}} \\
 	\mytoprule
-	\cmd{apt-get update}					& synchronize package index files from sources \\
-	\cmd{apt-get upgrade}					& install latest versions of installed packages \\
-	\cmd{apt-get install \vb{PACKAGE}}		& install \vb{PACKAGE} \hlx
-	\cmd{dpkg -i \vb{PACKAGE.deb}}			& install a Debian package \vb{PACKAGE.deb} \hlx
-	\cmd{./configure}						& configure building settings \\
-	\cmd{make}								& build the program from source code \\
-	\cmd{make install}						& install the program \\
+	\cmd{sudo apt-get update}					& synchronize package index files from sources \\
+	\cmd{sudo apt-get upgrade}					& install latest versions of installed packages \\
+	\cmd{sudo apt-get install \vb{PACKAGE}}		& install \vb{PACKAGE} \hlx
+	\cmd{sudo dpkg -i \vb{PACKAGE.deb}}			& install a Debian package \vb{PACKAGE.deb} \hlx
+	\cmd{./configure}							& configure building settings \\
+	\cmd{make}									& build the program from source code \\
+	\cmd{make install}							& install the program \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+
+\vspace{0pt}
+\columnbreak
+\vspace{0pt}
 
 % ---------- Searching ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -200,10 +213,7 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 	\cmd{locate \vb{FILE\_NAME}}			& find files whose name contain \vb{FILE\_NAME} \\
 	\mybottomrule
 \end{tabularx}
-
-\vspace{0pt}
-\columnbreak
-\vspace{0pt}
+\spacebtwtables
 
 % ---------- Git ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -244,14 +254,15 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 \end{tabularx}
 \spacebtwtables
 
-% ---------- Tips ---------- %
+% ---------- Miscellaneous ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{1}{@{}l@{}}{\headbf{Tips}} \\
+	\multicolumn{2}{@{}l@{}}{\headbf{Miscellaneous}} \\
 	\mytoprule
-	Hitting \code{Tab} while typing a command, file name, and option will auto-complete it. \\
-	\code{sudo} (superuser do) runs command with elevated privilege. \\
-	\code{tar} (tape archive) deal with tape drives backup. \\
-	Appending \code{{-}{-}help} after a command will print command usage help. \\
+	\cmd{sudo \vb{COMMAND}}				& run \vb{COMMAND} with elevated privilege \hlx
+	\cmd{\vb{COMMAND} {-}{-}help}		& print \vb{COMMAND}'s usage help \hlx
+	\cmd{ip address}					& print all internet protocol addresses \hlx
+	\cmd{ping \vb{HOST}}				& ping \vb{HOST} and print results \hlx
+	\cmd{tar xfz \vb{FILE.tar.gz}}		& extract files from \vb{FILE.tar.gz} \\
 	\mybottomrule
 \end{tabularx}
 
@@ -269,7 +280,7 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 	\cmd{catkin clean}					& clean the whole workspace \\
 	\cmd{catkin config \vb{OPTIONS}}	& configure catkin workspace with \vb{OPTIONS} \hlx
 	\cmd{wstool init}					& set up current directory as workspace \\
-	\cmd{wstool merge}					& merge workspace with another config set \\
+	\cmd{wstool merge \vb{ROSINSTALL}}	& merge \vb{ROSINSTALL} into the workspace \\
 	\cmd{wstool up}						& update configuration elements \\
 	\mybottomrule
 \end{tabularx}
@@ -285,8 +296,8 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 		\cmd{roslaunch \vb{PACKAGE} \vb{LAUNCHFILE}}	& launch \vb{LAUNCHFILE} in \vb{PACKAGE} \hlx
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-		\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE} (\vb{PARAM}:=\vb{VALUE}}) \\
-		\white{\cmd{}}run node \vb{EXECUTABLE} from \vb{PACKAGE} (with \vb{PARAM} set to \vb{VALUE}) \\ % find a way to replace \white with \phantom
+		\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE} [\vb{PARAM}:=\vb{VALUE}]} \\
+		\white{\cmd{}}run node \vb{EXECUTABLE} from \vb{PACKAGE} [with \vb{PARAM} set to \vb{VALUE}] \\ % find a way to replace \white with \phantom
 		\mybottomrule
 	\end{tabularx} } \\
 \end{tabularx}
@@ -352,6 +363,7 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 	\cmd{rossrv show \vb{TYPE}}						& print structure of \vb{TYPE} \\
 	\mybottomrule
 \end{tabularx}
+\spacebtwtables
 
 % ---------- ROS Environmental Variables ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -392,9 +404,31 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 	\cmd{rqt\_bag}			& visualize content of a bag \\
 	\cmd{rqt\_image\_view}	& visualize camera images \\
 	\cmd{rqt\_graph}		& visualize computation graph \\
+	\cmd{rqt\_tf\_tree}		& visualize TF frame tree \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
+
+% ---------- ROS Packge Structure ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
+	\mytoprule
+	\code{package.xml}		& manifest, dependencies and plugins \hlx
+	\code{CMakeLists.txt}	& description of compilation procedure \hlx
+	\code{src/}				& C and C++ source codes \hlx
+	\code{build/}			& generated makefiles and support files \hlx
+	\code{devel/}			& compiled binaries, libraries, headers \hlx
+	\code{include/}			& C and C++ header files \hlx
+	\code{scripts/}			& Python and bash scripts \hlx
+	\code{config/}			& YMAL configuration files \hlx
+	\code{cfg/}				& dynamic reconfigure scripts \hlx
+	\code{launch/}			& launch files \\
+	\mybottomrule
+\end{tabularx}
+
+\vspace{0pt}
+\columnbreak
+\vspace{0pt}
 
 % ---------- ROS Launch File Elements ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LB@{}}
@@ -408,27 +442,6 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 	\tag{env}& specify an environment variable for launched nodes \hlx
 	\tag{arg}& declare an argument \hlx
 	\tag{group}& group enclosed elements sharing a namespace or remap \\
-	\mybottomrule
-\end{tabularx}
-
-\vspace{0pt}
-\columnbreak
-\vspace{0pt}
-
-% ---------- ROS Packge Structure ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
-	\mytoprule
-	\code{package.xml}		& manifest, dependencies and plugins \hlx
-	\code{CMakeLists.txt}	& description of compilation procedure \hlx
-	\code{src/}				& C and C++ source codes \hlx
-	\code{build/}			& generated makefiles and support files \hlx
-	\code{devel/}			& compiled binaries, libraries, headers \hlx
-	\code{include/}			& C and C++ header files \hlx
-	\code{scripts/}			& Python and bash scripts \hlx
-	\code{config/}			& ymal configuration files \hlx
-	\code{cfg/}				& dynamics reconfigure scripts \hlx
-	\code{launch/}			& launch files \\
 	\mybottomrule
 \end{tabularx}
 \spacebtwtables
@@ -453,20 +466,19 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 Always remember to charge your SMB after each use.
 \spacebtwtables
 
-% ---------- ROS TF2 Structure ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2 Structure}} \\
-	\mytoprule
-	stamp							& time stamp of transform \\
-	frame\_id \& child\_frame\_id	& id of parent and child frame \hlx
-	translation						& x, y, z \\
-	rotation (quaternion)			& x, y, z, w \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
 \vfill\null
 \newpage
+
+% ---------- Candidate Contents ---------- %
+\begin{mdframed}[style=TitleStyle]
+	\begin{center}
+		\fontfamily{pnc} \selectfont
+		\large\scshape
+		Candidate \\
+		Contents \\
+	\end{center}
+\end{mdframed}
+\bigskip
 
 % ---------- Compression ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -494,8 +506,30 @@ Always remember to charge your SMB after each use.
 	\cmd{wget \vb{FILE}}		& download \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
+\spacebtwtables
 
-\vspace{0pt}
+% ---------- ROS TF2 Structure ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2 Structure}} \\
+	\mytoprule
+	stamp							& time stamp of transform \\
+	frame\_id \& child\_frame\_id	& id of parent and child frame \hlx
+	translation						& x, y, z \\
+	rotation (quaternion)			& x, y, z, w \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
+% ---------- Comments ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+	\multicolumn{1}{@{}l@{}}{\headbf{Comments}} \\
+	\mytoprule
+	\code{\ctrlp \altp T} is a desktop environment shortcut actually. However, it fits in the Linux Shell section for now. \hlx
+	some concise explanation of the whole TF concept \\
+	\mybottomrule
+\end{tabularx}
+\spacebtwtables
+
 
 \end{multicols*}
 \end{document}

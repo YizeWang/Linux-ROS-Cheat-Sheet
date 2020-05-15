@@ -20,6 +20,8 @@
 \newcommand{\code}[1]{\textbf{#1}}
 \newcommand{\cmd}[1]{\$ \textbf{#1}}
 \newcommand{\tag}[1]{<#1>}
+\newcommand{\doubledash}{{-}{-}}
+\newcommand{\xmltag}[1]{<#1/>}
 \newcommand{\hlx}{\\ \midrule[0.3ex]}
 \newcommand{\mytoprule}{\toprule[0.5ex]}
 \newcommand{\mybottomrule}{\bottomrule[0.5ex]}
@@ -309,7 +311,8 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 		\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE} [\vb{PARAM}:=\vb{VALUE}]} \\
-		\$ run node \vb{EXECUTABLE} from \vb{PACKAGE} [with \vb{PARAM} set to \vb{VALUE}] \\
+		\mbox{\phantom{\cmd{}}}run node \vb{EXECUTABLE} from \vb{PACKAGE} [with \vb{PARAM} set to \vb{VALUE}] \\
+		Eg. \$ rosrun rviz rviz -d maplab.rviz \\
 		\mybottomrule
 	\end{tabularx} } \\
 \end{tabularx}
@@ -447,26 +450,49 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2}} \\
 	\mytoprule
 	\cmd{rosrun tf tf\_echo \vb{FRAME1} \vb{FRAME2}}		& print frame relationship between \\
-	\$ rosrun tf tf\_echo /map /odom						& \vb{FRAME1} and \vb{FRAME2} \hlx
+	Eg. \$ rosrun tf tf\_echo /map /odom						& \vb{FRAME1} and \vb{FRAME2} \hlx
 	\cmd{rosrun tf view frames}								& visualize coordinate transform tree \\
 	\mybottomrule
 \end{tabularx}
 tf2 is a power package to deal with coordinate \textbf{t}rans\textbf{f}orm. It maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.
 \bigskip
 
-% ---------- ROS Launch File Elements ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LB@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Launch File Elements}} \\
-	\mytoprule
-	\tag{node}& launch a node \hlx
-	\tag{param}& set a parameter on the parameter server \hlx
-	\tag{remap}& declare a name mapping \hlx
-	\tag{rosparam}& set ROS parameters for the launch \hlx
-	\tag{include}& include other roslaunch files \hlx
-	\tag{env}& specify an environment variable for launched nodes \hlx
-	\tag{arg}& declare an argument \hlx
-	\tag{group}& group enclosed elements sharing a namespace or remap \\
-	\mybottomrule
+% ---------- ROS Launch File ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+			\multicolumn{1}{@{}l@{}}{\headbf{ROS Launch File}} \\
+			\mytoprule
+			\xmltag{node name=\vb{NODE} pkg=\vb{PACKAGE} type=\vb{EXE} [args=\vb{ARGS}]} \\
+			launch \vb{NODE} using the \vb{EXE} from \vb{PACKAGE} with command line arguments \vb{ARGS} \\
+			Eg. \xmltag{node name="rosbag\_record" pkg="rosbag" type="record" args="-a" output="screen"} \hlx
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+			\xmltag{include file=\vb{LAUNCH\_FILE}}			& import \vb{LAUNCH\_FILE} into the current one \\
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+			Eg. \xmltag{include file="\$(smb\_local\_planner)/launch/local\_planner.launch"}  \hlx
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
+			\xmltag{arg name=\vb{ARG}}						& declare the existence of \vb{ARG} \\
+			\xmltag{arg name=\vb{ARG} value=\vb{VAL}}		& declare \vb{ARG} with constant value \vb{VAL} \\
+			\xmltag{arg name=\vb{ARG} default=\vb{VAL}}		& declare \vb{ARG} with default value \vb{VAL} \\
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+		Eg. <arg name="rviz" value="true"/> \hlx
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
+		\xmltag{param name=\vb{PARAM} value=\vb{VAL}}		& set \vb{PARAM} to \vb{VAL} \\
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+			{Eg. }\xmltag{param name="frequency" value="300"} \hlx
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
+			\xmltag{remap from=\vb{OLD} to=\vb{NEW}}		& remap name \vb{OLD} to name \vb{NEW} \\
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+			{Eg. }\xmltag{remap from="/base\_pose\_measured" to="/base\_pose\_measured\_disabled"} \\
+			\mybottomrule
+	\end{tabularx} } \\
 \end{tabularx}
 \bigskip
 
@@ -541,12 +567,27 @@ Always remember to charge your SMB after each use.
 \end{tabularx}
 \bigskip
 
+% ---------- ROS Launch File Elements ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LB@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS Launch File Elements}} \\
+	\mytoprule
+	\tag{node}& launch a node \hlx
+	\tag{param}& set a parameter on the parameter server \hlx
+	\tag{remap}& declare a name mapping \hlx
+	\tag{rosparam}& set ROS parameters for the launch \hlx
+	\tag{include}& include other roslaunch files \hlx
+	\tag{env}& specify an environment variable for launched nodes \hlx
+	\tag{arg}& declare an argument \hlx
+	\tag{group}& group enclosed elements sharing a namespace or remap \\
+	\mybottomrule
+\end{tabularx}
+
 % ---------- Thomas Comments ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 	\multicolumn{1}{@{}l@{}}{\headbf{Thomas Comments}} \\
 	\mytoprule
-	\code{\ctrlp \altp T} is a desktop environment shortcut actually. However, it fits in the Linux Shell section for now. \hlx
-	launch file section i only useful, if the (at least most commonly used) arguments are explained as well. \hlx
+	\code{\ctrlp \altp T} is a desktop environment shortcut actually, not Linux Shell command. \hlx
+	launch file section is only useful, if the (at least most commonly used) arguments are explained as well. \hlx
 	ROS variables. \\
 	\mybottomrule
 \end{tabularx}

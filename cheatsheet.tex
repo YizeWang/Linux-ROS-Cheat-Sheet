@@ -15,6 +15,7 @@
 \newcommand{\altp}{Alt$+$}
 \newcommand{\ctrlp}{Ctrl$+$}
 \newcommand{\shiftp}{Shift$+$}
+\newcommand{\prefixp}{Prefix$+$}
 \newcommand{\cmt}[1]{\# #1}
 \newcommand{\code}[1]{\textbf{#1}}
 \newcommand{\cmd}[1]{\$ \textbf{#1}}
@@ -30,7 +31,6 @@
 \pagestyle{empty}
 \setlength{\parindent}{0pt}
 \setlength{\arrayrulewidth}{1pt}
-\newcommand{\spacebtwtables}{\newline \vspace*{1em} \newline}
 
 % title settings
 \mdfdefinestyle{TitleStyle}{linecolor=gray, linewidth=1pt, leftmargin=0mm, rightmargin=0mm, skipbelow=0mm, skipabove=0mm}
@@ -94,7 +94,7 @@
 	\cmd{vim \vb{FILE}}							& edit \vb{FILE} using Vim \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- System Info ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
@@ -130,90 +130,23 @@
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Linux Shell}} \\
 	\mytoprule
-	\code{\ctrlp \altp T}		& launch a new terminal \hlx
 	\code{\ctrlp C}				& kill the current process \hlx
 	\code{\ctrlp Z}				& suspend  the current process \\
-	\code{fg}					& resume the suspended process in foreground \\
-	\code{bg}					& resume the suspended process in background \hlx
-	\code{\ctrlp D}				& log out of the current session \hlx
+	\cmd{fg}					& resume the suspended process in foreground \\
+	\cmd{bg}					& resume the suspended process in background \hlx
 	\code{\ctrlp W}				& erase one word in the current line \hlx
 	\code{\ctrlp U}				& erase the whole current line \hlx
 	\code{\ctrlp R}				& reverse search in the previous commands \hlx
 	\code{\ctrlp A}				& go to the beginning of the line \hlx
 	\code{\ctrlp E}				& go to the end of the line \hlx
-	\code{!!}					& execute the last command \hlx
-	\code{exit}					& log out of the current session \hlx
-	\code{clear}				& clear the terminal screen \\
+	\code{\ctrlp D}				& log out of the current session \hlx
+	\cmd{exit}					& log out of the current session \hlx
+	\cmd{clear}					& clear the terminal screen \\
 	\mybottomrule
 \end{tabularx}
 Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctrlp R} repeatedly. \\
 \code{\ctrlp A} is especially useful when you forget to add \cb{sudo} before the command.
-\spacebtwtables
-
-% ---------- Terminator ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Terminator}} \\
-	\mytoprule
-	\code{\ctrlp \shiftp E}		& split terminals vertically \hlx
-	\code{\ctrlp \shiftp O}		& split terminals horizontally \hlx
-	\code{\ctrlp \shiftp T}		& open a new tab \hlx
-	\code{\ctrlp \shiftp I}		& open a new window \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- Terminal Multiplexer (TMUX) ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Terminal Multiplexer (TMUX)}} \\
-	\mytoprule
-							& \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- Secure Shell ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
-	\mytoprule
-	\cmd{ssh \vb{USER}@\vb{HOST}}					& connect \vb{HOST} as \vb{USER} \hlx
-	\cmd{ssh \vb{IP{\_}ADDRESS}}					& connect \vb{IP{\_}ADDRESS} \hlx
-	\cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}		& connect \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
-	\cmd{ssh-copy-id \vb{USER}@\vb{HOST}}			& add the key to \vb{HOST} as \vb{USER} \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- Package ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Package}} \\
-	\mytoprule
-	\cmd{sudo apt-get update}					& synchronize package index files from sources \\
-	\cmd{sudo apt-get upgrade}					& install latest versions of installed packages \\
-	\cmd{sudo apt-get install \vb{PACKAGE}}		& install \vb{PACKAGE} \hlx
-	\cmd{sudo dpkg -i \vb{PACKAGE.deb}}			& install a Debian package \vb{PACKAGE.deb} \hlx
-	\cmd{./configure}							& configure building settings \\
-	\cmd{make}									& build the program from source code \\
-	\cmd{make install}							& install the program \\
-	\mybottomrule
-\end{tabularx}
-
-\vspace{0pt}
-\columnbreak
-\vspace{0pt}
-
-% ---------- Searching ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Searching}} \\
-	\mytoprule
-	\cmd{grep \vb{PATTERN} \vb{FILES}}		& search for \vb{PATTERN} in \vb{FILES} \\
-	\cmd{grep -r \vb{PATTERN} \vb{DIR}}		& search for \vb{PATTERN} recursively in \vb{DIR} \\
-	\cmd{grep -n \vb{PATTERN} \vb{FILES}}	& search for \vb{PATTERN} and print line numbers \\
-	\cmd{grep -C1 \vb{PATTERN} \vb{FILES}}	& search for \vb{PATTERN} and print 1-line context \hlx
-	\cmd{\vb{CMD} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{CMD}'s output \hlx
-	\cmd{locate \vb{FILE\_NAME}}			& find files whose name contain \vb{FILE\_NAME} \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- Git ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -238,21 +171,100 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 	\cmd{git clean -fd}						& recursively force remove unstaged files \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
+
+% ---------- Secure Shell ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
+	\mytoprule
+	\cmd{ssh \vb{USER}@\vb{HOST}}					& connect \vb{HOST} as \vb{USER} \hlx
+	\cmd{ssh \vb{IP{\_}ADDRESS}}					& connect \vb{IP{\_}ADDRESS} \hlx
+	\cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}		& connect \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
+	\cmd{ssh-copy-id \vb{USER}@\vb{HOST}}			& add the key to \vb{HOST} as \vb{USER} \\
+	\mybottomrule
+\end{tabularx}
+\bigskip
+
+% ---------- Package ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Package}} \\
+	\mytoprule
+	\cmd{sudo apt-get update}					& synchronize package index files from sources \\
+	\cmd{sudo apt-get upgrade}					& install latest versions of installed packages \\
+	\cmd{sudo apt-get install \vb{PACKAGE}}		& install \vb{PACKAGE} \hlx
+	\cmd{sudo dpkg -i \vb{PACKAGE.deb}}			& install a Debian package \vb{PACKAGE.deb} \hlx
+	\cmd{./configure}							& configure building settings \\
+	\cmd{make}									& build the program from source code \\
+	\cmd{make install}							& install the program \\
+	\mybottomrule
+\end{tabularx}
+
+\vspace{0pt}
+\columnbreak
+\vspace{0pt}
+
+% ---------- Terminator ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Terminator}} \\
+	\mytoprule
+	\code{\ctrlp \shiftp I}			& open a new window \hlx
+	\code{\ctrlp \shiftp T}			& open a new tab \hlx
+	\code{\ctrlp \shiftp E}			& split terminals vertically \hlx
+	\code{\ctrlp \shiftp O}			& split terminals horizontally \hlx
+	\code{\altp \tag{arrow key}}	& switch to a different terminal \\
+	\mybottomrule
+\end{tabularx}
+\bigskip
+
+% ---------- Terminal Multiplexer (TMUX) ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Terminal Multiplexer (TMUX)}} \\
+	\mytoprule
+	\cmd{tmux}								& start TMUX\\
+	\cmd{tmux ls}							& list all sessions \\
+	\cmd{tmux a -t \vb{SESSION\_NAME}}		& attach to \vb{SESSION\_NAME}\\
+	\cmd{tmux new -s [\vb{SESSION\_NAME}]}	& create a new session with \vb{SESSION\_NAME} \hlx
+	\code{\ctrlp B}							& prefix \\
+	\code{\prefixp \%}						& split terminals horizontally \\
+	\code{\prefixp "}						& split terminals vertically \\
+	\code{\prefixp \tag{arrow key}}			& switch to a different terminal \\
+	\code{\prefixp C}						& create a new window in current session \\
+	\code{\prefixp \vb{NUM}}				& switch to \vb{NUM} window \\
+	\code{\prefixp D}						& detach from the current session \\
+	\mybottomrule
+\end{tabularx}
+\bigskip
+
+% ---------- Searching ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{Searching}} \\
+	\mytoprule
+	\cmd{grep \vb{PATTERN} \vb{FILES}}		& search for \vb{PATTERN} in \vb{FILES} \\
+	\cmd{grep -r \vb{PATTERN} \vb{DIR}}		& search for \vb{PATTERN} recursively in \vb{DIR} \\
+	\cmd{grep -n \vb{PATTERN} \vb{FILES}}	& search for \vb{PATTERN} and print line numbers \\
+	\cmd{grep -C1 \vb{PATTERN} \vb{FILES}}	& search for \vb{PATTERN} and print 1-line context \hlx
+	\cmd{\vb{CMD} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{CMD}'s output \hlx
+	\cmd{sudo updatedb}						& update searching database for \code{locate} command \\
+	\cmd{locate -b \vb{PATTERN}}			& find files and dirs containing \vb{PATTERN} \\
+	\mybottomrule
+\end{tabularx}
+\bigskip
 
 % ---------- Docker ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{Docker}} \\
 	\mytoprule
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \hlx
-	\cmd{}			& \\
+	\cmd{Placeholder}			& \hlx
+	\cmd{Placeholder}			& \hlx
+	\cmd{Placeholder}			& \hlx
+	\cmd{Placeholder}			& \hlx
+	\cmd{Placeholder}			& \hlx
+	\cmd{Placeholder}			& \hlx
+	\cmd{Placeholder}			& \hlx
+	\cmd{Placeholder}			& \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- Miscellaneous ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -285,7 +297,7 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 	\mybottomrule
 \end{tabularx}
 Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}.
-\spacebtwtables
+\bigskip
 
 % ---------- ROS Run ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
@@ -297,11 +309,11 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 		\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE} [\vb{PARAM}:=\vb{VALUE}]} \\
-		\white{\cmd{}}run node \vb{EXECUTABLE} from \vb{PACKAGE} [with \vb{PARAM} set to \vb{VALUE}] \\ % find a way to replace \white with \phantom
+		\$ run node \vb{EXECUTABLE} from \vb{PACKAGE} [with \vb{PARAM} set to \vb{VALUE}] \\
 		\mybottomrule
 	\end{tabularx} } \\
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- ROS Node ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -314,7 +326,7 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 	\cmd{rosnode kill \vb{NODE}}		& kill the running \vb{NODE} \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- ROS Parameter ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -328,7 +340,7 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 	\cmd{rosparam delete \vb{PARAM}}		& delete \vb{PARAM} \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- ROS Topic ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -363,7 +375,7 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 	\cmd{rossrv show \vb{TYPE}}						& print structure of \vb{TYPE} \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- ROS Environmental Variables ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -376,7 +388,7 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 	\code{ROS\_IP}				& IP address of a node \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- ROS Bag ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -391,7 +403,7 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 	\mybottomrule
 \end{tabularx}
 When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to append \cb{\code{{-}{-}clock}}.
-\spacebtwtables
+\bigskip
 
 % ---------- ROS Visualization Tools ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -407,7 +419,7 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 	\cmd{rqt\_tf\_tree}		& visualize TF frame tree \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- ROS Packge Structure ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -430,6 +442,18 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 \columnbreak
 \vspace{0pt}
 
+% ---------- ROS TF2 ---------- %
+\begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
+	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2}} \\
+	\mytoprule
+	\cmd{rosrun tf tf\_echo \vb{FRAME1} \vb{FRAME2}}		& print frame relationship between \\
+	\$ rosrun tf tf\_echo /map /odom						& \vb{FRAME1} and \vb{FRAME2} \hlx
+	\cmd{rosrun tf view frames}								& visualize coordinate transform tree \\
+	\mybottomrule
+\end{tabularx}
+tf2 is a power package to deal with coordinate \textbf{t}rans\textbf{f}orm. It maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.
+\bigskip
+
 % ---------- ROS Launch File Elements ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LB@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{ROS Launch File Elements}} \\
@@ -444,27 +468,36 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 	\tag{group}& group enclosed elements sharing a namespace or remap \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- SMB Workspace ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
 	\multicolumn{2}{@{}l@{}}{\headbf{SMB Workspace}} \\
 	\mytoprule
-	Key Packages						& \\
-	\code{rovio}						& robust visual inertial odometry framework \\
-	\code{maplab}						& visual-inertial mapping framework \\
-	\code{voxblox}						& volumetric mapping library \\
-	\code{apriltag}						& visual fiducial system \\
-	\code{elevation\_mapping}			& produce elevation map around robot \\
-	\code{traversability\_estimation}	& traversability mapping for rough terrain \\
-	\code{icp\_mapper}					& iterative closest point based slam system \\
-	\code{smb\_local\_planner}			& path planning system for SMB \hlx
-	Configuration						& \hlx
-	Launch Files						& \\
+	\code{Key Packages}				& \\
+	rovio							& robust visual inertial odometry framework \\
+	maplab							& visual-inertial mapping framework \\
+	voxblox							& volumetric mapping library \\
+	apriltag						& visual fiducial system \\
+	elevation\_mapping				& produce elevation map around robot \\
+	traversability\_estimation		& traversability mapping for rough terrain \\
+	icp\_mapper						& iterative closest point based slam system \\
+	smb\_local\_planner				& path planning system for SMB \hlx
+	\code{Configuration}			& \\
+	Placeholder						& \\
+	Placeholder						& \\
+	Placeholder						& \\
+	Placeholder						& \\
+	Placeholder						& \hlx
+	\code{Launch Files}				& \\
+	Placeholder						& \\
+	Placeholder						& \\
+	Placeholder						& \\
+	Placeholder						& \\
+	Placeholder						& \\
 	\mybottomrule
 \end{tabularx}
 Always remember to charge your SMB after each use.
-\spacebtwtables
 
 \vfill\null
 \newpage
@@ -492,7 +525,7 @@ Always remember to charge your SMB after each use.
 	\cmd{gzip -d \vb{FILE.gz}}					& decompress \vb{FILE.gz} back to \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 % ---------- Network ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
@@ -506,29 +539,18 @@ Always remember to charge your SMB after each use.
 	\cmd{wget \vb{FILE}}		& download \vb{FILE} \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
-% ---------- ROS TF2 Structure ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2 Structure}} \\
-	\mytoprule
-	stamp							& time stamp of transform \\
-	frame\_id \& child\_frame\_id	& id of parent and child frame \hlx
-	translation						& x, y, z \\
-	rotation (quaternion)			& x, y, z, w \\
-	\mybottomrule
-\end{tabularx}
-\spacebtwtables
-
-% ---------- Comments ---------- %
+% ---------- Thomas Comments ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-	\multicolumn{1}{@{}l@{}}{\headbf{Comments}} \\
+	\multicolumn{1}{@{}l@{}}{\headbf{Thomas Comments}} \\
 	\mytoprule
 	\code{\ctrlp \altp T} is a desktop environment shortcut actually. However, it fits in the Linux Shell section for now. \hlx
-	some concise explanation of the whole TF concept \\
+	launch file section i only useful, if the (at least most commonly used) arguments are explained as well. \hlx
+	ROS variables. \\
 	\mybottomrule
 \end{tabularx}
-\spacebtwtables
+\bigskip
 
 
 \end{multicols*}

@@ -446,13 +446,18 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 \vspace{0pt}
 
 % ---------- ROS TF2 ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS TF2}} \\
-	\mytoprule
-	\cmd{rosrun tf tf\_echo \vb{FRAME1} \vb{FRAME2}}		& print frame relationship between \\
-	Eg. \$ rosrun tf tf\_echo /map /odom						& \vb{FRAME1} and \vb{FRAME2} \hlx
-	\cmd{rosrun tf view frames}								& visualize coordinate transform tree \\
-	\mybottomrule
+\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+			\multicolumn{1}{@{}l@{}}{\headbf{ROS TF2}} \\
+			\mytoprule
+			\cmd{rosrun tf tf\_echo \vb{FRAME1} \vb{FRAME2}} \\
+			print coordinate frame relationship between \vb{FRAME1} and \vb{FRAME2} \\
+			Eg. \$ rosrun tf tf\_echo /map /odom \hlx
+	\end{tabularx} } \\
+	{ \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+			\cmd{rosrun tf view frames}			& visualize coordinate transform tree \\
+			\mybottomrule
+	\end{tabularx} } \\
 \end{tabularx}
 tf2 is a power package to deal with coordinate \textbf{t}rans\textbf{f}orm. It maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.
 \bigskip
@@ -467,7 +472,7 @@ tf2 is a power package to deal with coordinate \textbf{t}rans\textbf{f}orm. It m
 			Eg. \xmltag{node name="rosbag\_record" pkg="rosbag" type="record" args="-a" output="screen"} \hlx
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-			\xmltag{include file=\vb{LAUNCH\_FILE}}			& import \vb{LAUNCH\_FILE} into the current one \\
+			\xmltag{include file=\vb{LAUNCHFILE}}			& import \vb{LAUNCHFILE} into the current one \\
 	\end{tabularx} } \\
 	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 			Eg. \xmltag{include file="\$(smb\_local\_planner)/launch/local\_planner.launch"}  \hlx
@@ -581,14 +586,14 @@ Always remember to charge your SMB after each use.
 	\tag{group}& group enclosed elements sharing a namespace or remap \\
 	\mybottomrule
 \end{tabularx}
+\bigskip
 
 % ---------- Thomas Comments ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
 	\multicolumn{1}{@{}l@{}}{\headbf{Thomas Comments}} \\
 	\mytoprule
-	\code{\ctrlp \altp T} is a desktop environment shortcut actually, not Linux Shell command. \hlx
-	launch file section is only useful, if the (at least most commonly used) arguments are explained as well. \hlx
-	ROS variables. \\
+	\code{\ctrlp \altp T} is a desktop environment shortcut actually, not a Linux Shell command. \hlx
+	ROS Variables Section \\
 	\mybottomrule
 \end{tabularx}
 \bigskip

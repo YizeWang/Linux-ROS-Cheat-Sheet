@@ -12,11 +12,13 @@ This repository contains a cheat sheet for frequently-used commands and knowledg
 - ROS Wiki: http://wiki.ros.org/ROS/Tutorials
 - MRS Cheat Sheet: https://github.com/klaxalk/mrs-cheatsheet
 - FOSSwire Cheat Sheet: https://files.fosswire.com/2007/08/fwunixref.pdf
+- Docker Cheat Sheet: https://www.docker.com
 
 ## Maintainer
 
-Current maintainer is Yize Wang - `yizwang@student.ethz.ch`
+Current maintainer is Yize Wang - `EldenWang@hotmail.com`
 
 ## Acknowledgement
 
 Thank Thomas Mantel for inspiration and instructions.
+

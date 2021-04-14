@@ -54,13 +54,14 @@
 % ---------- Title ---------- %
 \begin{mdframed}[style=TitleStyle]
 \begin{center}
-	\fontfamily{pnc} \selectfont
-	\large\scshape
-	ETH Robotics Summer School \\
-	Linux \& ROS Cheat Sheet \\
-	\bigskip
-	\footnotesize Autonomous Systems Lab \\
-	\footnotesize Last Updated: \today
+    \medskip
+    \fontfamily{pnc} \selectfont
+    \large\scshape
+    Linux \& ROS Cheat Sheet \\
+    \medskip
+    \footnotesize Author: Yize Wang \\
+    \footnotesize Institute: Autonomous Systems Lab \\
+    \footnotesize Last Updated: \today
 \end{center}
 \end{mdframed}
 
@@ -68,60 +69,60 @@
 
 % ---------- File Commands ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{File Commands}} \\
-	\mytoprule
-	\cmd{ls}									& list contents of the current directory \\
-	\cmd{ls -al}								& list hidden contents of the current directory \hlx
-	\cmd{cd}									& change the directory to home \\
-	\cmd{cd -}									& change the directory to the previous one \\
-	\cmd{cd \vb{DIR}}							& change the directory to \vb{DIR} \hlx
-	\cmd{mkdir \vb{DIR}}						& make a new directory named \vb{DIR} \hlx
-	\cmd{pwd}									& print the working directory \hlx
-	\cmd{rm \vb{FILE}}							& remove \vb{FILE} \\
-	\cmd{rm -r \vb{DIR}}						& remove \vb{DIR} recursively \\
-	\cmd{rm -f \vb{FILE}}						& force remove \vb{FILE} \\
-	\cmd{rm -rf \vb{DIR}}						& force remove \vb{DIR} recursively \hlx
-	\cmd{cp \vb{FILE1} \vb{FILE2}/\vb{DIR}}		& copy \vb{FILE1} to \vb{FILE2}/\vb{DIR} \\
-	\cmd{cp -r \vb{DIR1} \vb{DIR2}}				& copy \vb{DIR1} to \vb{DIR2} recursively \hlx
-	\cmd{mv \vb{FILE1} \vb{FILE2}/\vb{DIR}}		& move \vb{FILE1} to \vb{FILE2}/\vb{DIR} \hlx
-	\cmd{ln -s \vb{FILE} \vb{LINK}}				& create a symbolic link \vb{LINK} to \vb{FILE} \hlx
-	\cmd{touch \vb{FILE}}						& create \vb{FILE} \hlx
-	\cmd{cat \vb{FILE}}							& view content of \vb{FILE} \\
-	\cmd{cat > \vb{FILE}}						& write input into \vb{FILE} \hlx
-	\cmd{echo \vb{STRING}/\vb{VAR}}				& print \vb{STRING}/value of \vb{VAR} \\
-	\cmd{more \vb{FILE}}						& print content of \vb{FILE} \\
-	\cmd{head \vb{FILE}}						& print the first 10 lines of \vb{FILE} \\
-	\cmd{tail \vb{FILE}}						& print the last 10 lines of \vb{FILE} \hlx
-	\cmd{gedit \vb{FILE}}						& edit \vb{FILE} using GUI text editor \\
-	\cmd{vim \vb{FILE}}							& edit \vb{FILE} using Vim \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{File Commands}} \\
+    \mytoprule
+    \cmd{ls}                                    & list contents of the current directory \\
+    \cmd{ls -al}                                & list hidden contents of the current directory \hlx
+    \cmd{cd}                                    & change the directory to home \\
+    \cmd{cd -}                                  & change the directory to the previous one \\
+    \cmd{cd \vb{DIR}}                           & change the directory to \vb{DIR} \hlx
+    \cmd{mkdir \vb{DIR}}                        & make a new directory named \vb{DIR} \hlx
+    \cmd{pwd}                                   & print the working directory \hlx
+    \cmd{rm \vb{FILE}}                          & remove \vb{FILE} \\
+    \cmd{rm -r \vb{DIR}}                        & remove \vb{DIR} recursively \\
+    \cmd{rm -f \vb{FILE}}                       & force remove \vb{FILE} \\
+    \cmd{rm -rf \vb{DIR}}                       & force remove \vb{DIR} recursively \hlx
+    \cmd{cp \vb{FILE1} \vb{FILE2}/\vb{DIR}}     & copy \vb{FILE1} to \vb{FILE2}/\vb{DIR} \\
+    \cmd{cp -r \vb{DIR1} \vb{DIR2}}             & copy \vb{DIR1} to \vb{DIR2} recursively \hlx
+    \cmd{mv \vb{FILE1} \vb{FILE2}/\vb{DIR}}     & move \vb{FILE1} to \vb{FILE2}/\vb{DIR} \hlx
+    \cmd{ln -s \vb{FILE} \vb{LINK}}             & create a symbolic link \vb{LINK} to \vb{FILE} \hlx
+    \cmd{touch \vb{FILE}}                       & create \vb{FILE} \hlx
+    \cmd{cat \vb{FILE}}                         & view content of \vb{FILE} \\
+    \cmd{cat > \vb{FILE}}                       & write input into \vb{FILE} \hlx
+    \cmd{echo \vb{STRING}/\vb{VAR}}             & print \vb{STRING}/value of \vb{VAR} \\
+    \cmd{more \vb{FILE}}                        & print content of \vb{FILE} \\
+    \cmd{head \vb{FILE}}                        & print the first 10 lines of \vb{FILE} \\
+    \cmd{tail \vb{FILE}}                        & print the last 10 lines of \vb{FILE} \hlx
+    \cmd{gedit \vb{FILE}}                       & edit \vb{FILE} using GUI text editor \\
+    \cmd{vim \vb{FILE}}                         & edit \vb{FILE} using Vim \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- System Info ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-	{ \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-		\multicolumn{2}{@{}l@{}}{\headbf{System Information}} \\
-		\mytoprule
-		\cmd{env}					& print environment variables \hlx
-		\cmd{date}					& print system date and time \hlx
-		\cmd{man \vb{COMMAND}}		& print user manual of \vb{COMMAND} \hlx
-		\cmd{whereis \vb{APP}}		& print locations of \vb{APP} \hlx
-		\cmd{which \vb{APP}}		& print executable file of \vb{APP} \hlx
-		\cmd{ps}					& print process status \\
-		\cmd{ps -aux}				& print all running process \hlx
-		\cmd{htop}					& print currently running processes and more \hlx
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}LTR@{}}
-		path symbolic links			&\code{{.}}					& current directory \\
-									&\code{{.}{.}}				& parent directory \\
-									&\code{\textasciitilde}		& home directory \\
-									&\code{/}					& root directory \hlx
-		output direction			&\code{{>}}					& to a file (rewrite) \\
-									&\code{{>}{>}}				& to a file (append) \\
-									&\code{{|}}					& pipe  output of first command to second \\
-		\mybottomrule
-	\end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+        \multicolumn{2}{@{}l@{}}{\headbf{System Information}} \\
+        \mytoprule
+        \cmd{env}                   & print environment variables \hlx
+        \cmd{date}                  & print system date and time \hlx
+        \cmd{man \vb{COMMAND}}      & print user manual of \vb{COMMAND} \hlx
+        \cmd{whereis \vb{APP}}      & print locations of \vb{APP} \hlx
+        \cmd{which \vb{APP}}        & print executable file of \vb{APP} \hlx
+        \cmd{ps}                    & print process status \\
+        \cmd{ps -aux}               & print all running process \hlx
+        \cmd{htop}                  & print currently running processes and more \hlx
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}LTR@{}}
+        path symbolic links         &\code{{.}}                 & current directory \\
+                                    &\code{{.}{.}}              & parent directory \\
+                                    &\code{\textasciitilde}     & home directory \\
+                                    &\code{/}                   & root directory \hlx
+        output direction            &\code{{>}}                 & to a file (rewrite) \\
+                                    &\code{{>}{>}}              & to a file (append) \\
+                                    &\code{{|}}                 & pipe  output of first command to second \\
+        \mybottomrule
+    \end{tabularx} } \\
 \end{tabularx}
 
 \vspace{0pt}
@@ -130,21 +131,21 @@
 
 % ---------- Linux Shell ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Linux Shell}} \\
-	\mytoprule
-	\code{\ctrlp C}				& kill the current process \hlx
-	\code{\ctrlp Z}				& suspend  the current process \\
-	\cmd{fg}					& resume the suspended process in foreground \\
-	\cmd{bg}					& resume the suspended process in background \hlx
-	\code{\ctrlp W}				& erase one word in the current line \hlx
-	\code{\ctrlp U}				& erase the whole current line \hlx
-	\code{\ctrlp R}				& reverse search in the previous commands \hlx
-	\code{\ctrlp A}				& go to the beginning of the line \hlx
-	\code{\ctrlp E}				& go to the end of the line \hlx
-	\code{\ctrlp D}				& log out of the current session \hlx
-	\cmd{exit}					& log out of the current session \hlx
-	\cmd{clear}					& clear the terminal screen \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{Linux Shell}} \\
+    \mytoprule
+    \code{\ctrlp C}             & kill the current process \hlx
+    \code{\ctrlp Z}             & suspend  the current process \\
+    \cmd{fg}                    & resume the suspended process in foreground \\
+    \cmd{bg}                    & resume the suspended process in background \hlx
+    \code{\ctrlp W}             & erase one word in the current line \hlx
+    \code{\ctrlp U}             & erase the whole current line \hlx
+    \code{\ctrlp R}             & reverse search in the previous commands \hlx
+    \code{\ctrlp A}             & go to the beginning of the line \hlx
+    \code{\ctrlp E}             & go to the end of the line \hlx
+    \code{\ctrlp D}             & log out of the current session \hlx
+    \cmd{exit}                  & log out of the current session \hlx
+    \cmd{clear}                 & clear the terminal screen \\
+    \mybottomrule
 \end{tabularx}
 Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctrlp R} repeatedly. \\
 \code{\ctrlp A} is especially useful when you forget to add \cb{sudo} before the command.
@@ -152,53 +153,53 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 
 % ---------- Git ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Git}} \\
-	\mytoprule
-	\cmd{git clone \vb{URL}}				& clone the repository from \vb{URL} \hlx
-	\cmd{git status}						& print current branch status \vb{BRANCH} \\
-	\cmd{git branch \vb{BRANCH}}			& create a new branch named \vb{BRANCH} \\
-	\cmd{git checkout \vb{BRANCH}}			& switch to the branch named \vb{BRANCH} \\
-	\cmd{git merge \vb{BRANCH}}				& combine \vb{BRANCH} into the current one \hlx
-	\cmd{git fetch}							& download all history from GitHub \\
-	\cmd{git merge}							& combine remote branches into local branch \\
-	\cmd{git push}							& upload all local branch commits to GitHub \\
-	\cmd{git pull}							& update local branch from GitHub \hlx
-	\cmd{git log}							& list version history for current branch \\
-	\cmd{git log {-}{-}follow \vb{FILE}}	& list version history for \vb{FILE} \\
-	\cmd{git show \vb{COMMIT}}				& output content changes of \vb{COMMIT} \\
-	\cmd{git add \vb{FILE}}					& stage \vb{FILE} \\
-	\cmd{git commit -m "\vb{MESSAGE}"}		& commit staged file with \vb{MESSAGE} \hlx
-	\cmd{git reset \vb{FILE}}				& reset \vb{FILE} \\
-	\cmd{git reset {-}{-}hard}				& reset all uncommitted changes \\
-	\cmd{git clean -fd}						& recursively force remove unstaged files \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{Git}} \\
+    \mytoprule
+    \cmd{git clone \vb{URL}}                & clone the repository from \vb{URL} \hlx
+    \cmd{git status}                        & print current branch status \vb{BRANCH} \\
+    \cmd{git branch \vb{BRANCH}}            & create a new branch named \vb{BRANCH} \\
+    \cmd{git checkout \vb{BRANCH}}          & switch to the branch named \vb{BRANCH} \\
+    \cmd{git merge \vb{BRANCH}}             & combine \vb{BRANCH} into the current one \hlx
+    \cmd{git fetch}                         & download all history from GitHub \\
+    \cmd{git merge}                         & combine remote branches into local branch \\
+    \cmd{git push}                          & upload all local branch commits to GitHub \\
+    \cmd{git pull}                          & update local branch from GitHub \hlx
+    \cmd{git log}                           & list version history for current branch \\
+    \cmd{git log {-}{-}follow \vb{FILE}}    & list version history for \vb{FILE} \\
+    \cmd{git show \vb{COMMIT}}              & output content changes of \vb{COMMIT} \\
+    \cmd{git add \vb{FILE}}                 & stage \vb{FILE} \\
+    \cmd{git commit -m "\vb{MESSAGE}"}      & commit staged file with \vb{MESSAGE} \hlx
+    \cmd{git reset \vb{FILE}}               & reset \vb{FILE} \\
+    \cmd{git reset {-}{-}hard}              & reset all uncommitted changes \\
+    \cmd{git clean -fd}                     & recursively force remove unstaged files \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- Secure Shell ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
-	\mytoprule
-	\cmd{ssh \vb{USER}@\vb{HOST}}					& connect \vb{HOST} as \vb{USER} \hlx
-	\cmd{ssh \vb{IP{\_}ADDRESS}}					& connect \vb{IP{\_}ADDRESS} \hlx
-	\cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}		& connect \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
-	\cmd{ssh-copy-id \vb{USER}@\vb{HOST}}			& add the key to \vb{HOST} as \vb{USER} \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{Secure Shell (SSH)}} \\
+    \mytoprule
+    \cmd{ssh \vb{USER}@\vb{HOST}}                   & connect \vb{HOST} as \vb{USER} \hlx
+    \cmd{ssh \vb{IP{\_}ADDRESS}}                    & connect \vb{IP{\_}ADDRESS} \hlx
+    \cmd{ssh -p \vb{PORT} \vb{USER}@\vb{HOST}}      & connect \vb{HOST} on \vb{PORT} as \vb{USER} \hlx
+    \cmd{ssh-copy-id \vb{USER}@\vb{HOST}}           & add the key to \vb{HOST} as \vb{USER} \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- Package ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Package}} \\
-	\mytoprule
-	\cmd{sudo apt-get update}					& synchronize package index files from sources \\
-	\cmd{sudo apt-get upgrade}					& install latest versions of installed packages \\
-	\cmd{sudo apt-get install \vb{PACKAGE}}		& install \vb{PACKAGE} \hlx
-	\cmd{sudo dpkg -i \vb{PACKAGE.deb}}			& install a Debian package \vb{PACKAGE.deb} \hlx
-	\cmd{./configure}							& configure building settings \\
-	\cmd{make}									& build the program from source code \\
-	\cmd{make install}							& install the program \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{Package}} \\
+    \mytoprule
+    \cmd{sudo apt-get update}                    & synchronize package index files from sources \\
+    \cmd{sudo apt-get upgrade}                   & install latest versions of installed packages \\
+    \cmd{sudo apt-get install \vb{PACKAGE}}      & install \vb{PACKAGE} \hlx
+    \cmd{sudo dpkg -i \vb{PACKAGE.deb}}          & install a Debian package \vb{PACKAGE.deb} \hlx
+    \cmd{./configure}                            & configure building settings \\
+    \cmd{make}                                   & build the program from source code \\
+    \cmd{make install}                           & install the program \\
+    \mybottomrule
 \end{tabularx}
 
 \vspace{0pt}
@@ -207,158 +208,166 @@ Use \code{\ctrlp R} to reverse search, type part of a command and hit \code{\ctr
 
 % ---------- Terminator ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Terminator}} \\
-	\mytoprule
-	\code{\ctrlp \shiftp I}			& open a new window \hlx
-	\code{\ctrlp \shiftp T}			& open a new tab \hlx
-	\code{\ctrlp \shiftp E}			& split terminals vertically \hlx
-	\code{\ctrlp \shiftp O}			& split terminals horizontally \hlx
-	\code{\altp \tag{arrow key}}	& switch to a different terminal \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{Terminator}} \\
+    \mytoprule
+    \code{\ctrlp \shiftp I}         & open a new window \hlx
+    \code{\ctrlp \shiftp T}         & open a new tab \hlx
+    \code{\ctrlp \shiftp E}         & split terminals vertically \hlx
+    \code{\ctrlp \shiftp O}         & split terminals horizontally \hlx
+    \code{\altp \tag{arrow key}}    & switch to a different terminal \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- Terminal Multiplexer (TMUX) ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Terminal Multiplexer (TMUX)}} \\
-	\mytoprule
-	\cmd{tmux}								& start TMUX\\
-	\cmd{tmux ls}							& list all sessions \\
-	\cmd{tmux a -t \vb{SESSION\_NAME}}		& attach to \vb{SESSION\_NAME}\\
-	\cmd{tmux new -s [\vb{SESSION\_NAME}]}	& create a new session with \vb{SESSION\_NAME} \hlx
-	\code{\ctrlp B}							& prefix \\
-	\code{\prefixp \%}						& split terminals horizontally \\
-	\code{\prefixp "}						& split terminals vertically \\
-	\code{\prefixp \tag{arrow key}}			& switch to a different terminal \\
-	\code{\prefixp C}						& create a new window in current session \\
-	\code{\prefixp \vb{NUM}}				& switch to \vb{NUM} window \\
-	\code{\prefixp D}						& detach from the current session \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{Terminal Multiplexer (TMUX)}} \\
+    \mytoprule
+    \cmd{tmux}                              & start TMUX\\
+    \cmd{tmux ls}                           & list all sessions \\
+    \cmd{tmux a -t \vb{SESSION\_NAME}}      & attach to \vb{SESSION\_NAME}\\
+    \cmd{tmux new -s [\vb{SESSION\_NAME}]}  & create a new session with \vb{SESSION\_NAME} \hlx
+    \code{\ctrlp B}                         & prefix \\
+    \code{\prefixp \%}                      & split terminals horizontally \\
+    \code{\prefixp "}                       & split terminals vertically \\
+    \code{\prefixp \tag{arrow key}}         & switch to a different terminal \\
+    \code{\prefixp C}                       & create a new window in current session \\
+    \code{\prefixp \vb{NUM}}                & switch to \vb{NUM} window \\
+    \code{\prefixp D}                       & detach from the current session \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- Searching ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Searching}} \\
-	\mytoprule
-	\cmd{grep \vb{PATTERN} \vb{FILES}}		& search for \vb{PATTERN} in \vb{FILES} \\
-	\cmd{grep -r \vb{PATTERN} \vb{DIR}}		& search for \vb{PATTERN} recursively in \vb{DIR} \\
-	\cmd{grep -n \vb{PATTERN} \vb{FILES}}	& search for \vb{PATTERN} and print line numbers \\
-	\cmd{grep -C1 \vb{PATTERN} \vb{FILES}}	& search for \vb{PATTERN} and print 1-line context \hlx
-	\cmd{\vb{CMD} | grep \vb{PATTERN}}		& search for \vb{PATTERN} in \vb{CMD}'s output \hlx
-	\cmd{sudo updatedb}						& update searching database for \code{locate} command \\
-	\cmd{locate -b \vb{PATTERN}}			& find files and dirs containing \vb{PATTERN} \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{Searching}} \\
+    \mytoprule
+    \cmd{grep \vb{PATTERN} \vb{FILES}}      & search for \vb{PATTERN} in \vb{FILES} \\
+    \cmd{grep -r \vb{PATTERN} \vb{DIR}}     & search for \vb{PATTERN} recursively in \vb{DIR} \\
+    \cmd{grep -n \vb{PATTERN} \vb{FILES}}   & search for \vb{PATTERN} and print line numbers \\
+    \cmd{grep -C1 \vb{PATTERN} \vb{FILES}}  & search for \vb{PATTERN} and print 1-line context \hlx
+    \cmd{\vb{CMD} | grep \vb{PATTERN}}      & search for \vb{PATTERN} in \vb{CMD}'s output \hlx
+    \cmd{sudo updatedb}                     & update searching database for \code{locate} command \\
+    \cmd{locate -b \vb{PATTERN}}            & find files and dirs containing \vb{PATTERN} \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- Docker ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Docker}} \\
-	\mytoprule
-	\cmd{Placeholder}			& \hlx
-	\cmd{Placeholder}			& \hlx
-	\cmd{Placeholder}			& \hlx
-	\cmd{Placeholder}			& \hlx
-	\cmd{Placeholder}			& \hlx
-	\cmd{Placeholder}			& \hlx
-	\cmd{Placeholder}			& \hlx
-	\cmd{Placeholder}			& \\
-	\mybottomrule
+\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+    { \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+            \multicolumn{2}{@{}l@{}}{\headbf{Docker}} \\
+            \mytoprule
+            \cmd{docker build -t \vb{IMAGE}:\vb{TAG}}         & build \vb{IMAGE} with tag \vb{TAG} \\
+            \cmd{docker image ls}                             & list all local images with Docker Engine \\
+            \cmd{docker image rm \vb{IMAGE}:\vb{TAG}}         & delete image from local image store \hlx
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+            \cmd{docker tag \vb{OLD\_IMAGE}:\vb{OLD\_TAG} \vb{REGISTRY}/\vb{NEW\_IMAGE}:\vb{NEW\_TAG}} \\
+            retag local image with new image name and tag \\
+            Eg. \$ docker tag myimage:1.0 myrepo/myimage:2.0 \hlx
+            \cmd{docker push \vb{REGISTRT}/\vb{IMAGE}:\vb{TAG}} \\
+            push image to registry \\
+            Eg. \$ docker push myrepo/myimage:2.0 \hlx
+            Eg. \$ docker container run --name web -p 5000:80 alpine:3.9 \\
+            run container from Alpine version 3.9 image, name the running container "web" and expose port 5000 externally, mapped to port 80 inside the container \hlx
+            Eg. \$ docker container stop/kill web \\
+            stop "web" container through SIGTERM/SIGKILL \\
+            \mybottomrule
+    \end{tabularx} }
 \end{tabularx}
 \bigskip
 
 % ---------- Miscellaneous ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Miscellaneous}} \\
-	\mytoprule
-	\cmd{sudo \vb{COMMAND}}				& run \vb{COMMAND} with elevated privilege \hlx
-	\cmd{\vb{COMMAND} {-}{-}help}		& print \vb{COMMAND}'s usage help \hlx
-	\cmd{ip address}					& print all internet protocol addresses \hlx
-	\cmd{ping \vb{HOST}}				& ping \vb{HOST} and print results \hlx
-	\cmd{tar xfz \vb{FILE.tar.gz}}		& extract files from \vb{FILE.tar.gz} \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{Miscellaneous}} \\
+    \mytoprule
+    \cmd{sudo \vb{COMMAND}}             & run \vb{COMMAND} with elevated privilege \hlx
+    \cmd{\vb{COMMAND} {-}{-}help}       & print \vb{COMMAND}'s usage help \hlx
+    \cmd{ip address}                    & print all internet protocol addresses \hlx
+    \cmd{ping \vb{HOST}}                & ping \vb{HOST} and print results \hlx
+    \cmd{tar xfz \vb{FILE.tar.gz}}      & extract files from \vb{FILE.tar.gz} \\
+    \mybottomrule
 \end{tabularx}
 
 \vfill\null
-\columnbreak
-\vspace{0pt}
+\newpage
 
 % ---------- ROS Catkin Workspace ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Catkin Workspace}} \\
-	\mytoprule
-	\cmd{roscd \vb{PACKAGE}}           & change directory to \vb{PACKAGE}'s location \hlx
-	\cmd{catkin build}                 & build the whole workspace \\
-	\cmd{catkin build \vb{PACKAGE}}    & build \vb{PACKAGE} \\
-	\cmd{catkin clean}                 & clean the whole workspace \\
-	\cmd{catkin config \vb{OPTIONS}}   & configure catkin workspace with \vb{OPTIONS} \hlx
-	\cmd{wstool init}                  & set up current directory as workspace \\
-	\cmd{wstool merge \vb{ROSINSTALL}} & merge \vb{ROSINSTALL} into the workspace \\
-	\cmd{wstool up}                    & update configuration elements \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Catkin Workspace}} \\
+    \mytoprule
+    \cmd{roscd \vb{PACKAGE}}           & change directory to \vb{PACKAGE}'s location \hlx
+    \cmd{catkin build}                 & build the whole workspace \\
+    \cmd{catkin build \vb{PACKAGE}}    & build \vb{PACKAGE} \\
+    \cmd{catkin clean}                 & clean the whole workspace \\
+    \cmd{catkin config \vb{OPTIONS}}   & configure catkin workspace with \vb{OPTIONS} \hlx
+    \cmd{wstool init}                  & set up current directory as workspace \\
+    \cmd{wstool merge \vb{ROSINSTALL}} & merge \vb{ROSINSTALL} into the workspace \\
+    \cmd{wstool up}                    & update configuration elements \\
+    \mybottomrule
 \end{tabularx}
 Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}.
 \bigskip
 
 % ---------- ROS Run ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-	{ \begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
-		\multicolumn{2}{@{}l@{}}{\headbf{ROS Run}} \\
-		\mytoprule
-		\cmd{roscore}									& invoke the core of ROS \hlx
-		\cmd{roslaunch \vb{PACKAGE} \vb{LAUNCHFILE}}	& launch \vb{LAUNCHFILE} in \vb{PACKAGE} \hlx
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-		\cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE} [\vb{PARAM}:=\vb{VALUE}]} \\
-		\mbox{\phantom{\cmd{}}}run node \vb{EXECUTABLE} from \vb{PACKAGE} [with \vb{PARAM} set to \vb{VALUE}] \\
-		Eg. \$ rosrun rviz rviz -d maplab.rviz \\
-		\mybottomrule
-	\end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}LS@{}}
+        \multicolumn{2}{@{}l@{}}{\headbf{ROS Run}} \\
+        \mytoprule
+        \cmd{roscore}                                   & invoke the core of ROS \hlx
+        \cmd{roslaunch \vb{PACKAGE} \vb{LAUNCHFILE}}    & launch \vb{LAUNCHFILE} in \vb{PACKAGE} \hlx
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+        \cmd{rosrun \vb{PACKAGE} \vb{EXECUTABLE} [\vb{PARAM}:=\vb{VALUE}]} \\
+        \mbox{\phantom{\cmd{}}}run node \vb{EXECUTABLE} from \vb{PACKAGE} [with \vb{PARAM} set to \vb{VALUE}] \\
+        Eg. \$ rosrun rviz rviz -d maplab.rviz \\
+        \mybottomrule
+    \end{tabularx} } \\
 \end{tabularx}
 \bigskip
 
 % ---------- ROS Node ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Node}} \\
-	\mytoprule
-	\cmd{rosnode ping \vb{NODE}}		& test connectivity to \vb{NODE}\hlx
-	\cmd{rosnode list}					& list active nodes \hlx
-	\cmd{rosnode info \vb{NODE}}		& print information about \vb{NODE} \hlx
-	\cmd{rosnode machine}				& list nodes running on the machine \hlx
-	\cmd{rosnode kill \vb{NODE}}		& kill the running \vb{NODE} \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Node}} \\
+    \mytoprule
+    \cmd{rosnode ping \vb{NODE}}             & test connectivity to \vb{NODE}\hlx
+    \cmd{rosnode list}                       & list active nodes \hlx
+    \cmd{rosnode info \vb{NODE}}             & print information about \vb{NODE} \hlx
+    \cmd{rosnode machine}                    & list nodes running on the machine \hlx
+    \cmd{rosnode kill \vb{NODE}}             & kill the running \vb{NODE} \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- ROS Parameter ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Parameter}} \\
-	\mytoprule
-	\cmd{rosparam list}						& list all parameter names \hlx
-	\cmd{rosparam set \vb{PARAM} \vb{VAL}}	& set value of \vb{PARAM} to \vb{VAL} \hlx
-	\cmd{rosparam get \vb{PARAM}}			& print value of \vb{PARAM} \hlx
-	\cmd{rosparam load \vb{YAML}}			& load parameters from \vb{YAML} \hlx
-	\cmd{rosparam dump \vb{YAML}}			& dump parameters to \vb{YAML} \hlx
-	\cmd{rosparam delete \vb{PARAM}}		& delete \vb{PARAM} \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Parameter}} \\
+    \mytoprule
+    \cmd{rosparam list}                      & list all parameter names \hlx
+    \cmd{rosparam set \vb{PARAM} \vb{VAL}}   & set value of \vb{PARAM} to \vb{VAL} \hlx
+    \cmd{rosparam get \vb{PARAM}}            & print value of \vb{PARAM} \hlx
+    \cmd{rosparam load \vb{YAML}}            & load parameters from \vb{YAML} \hlx
+    \cmd{rosparam dump \vb{YAML}}            & dump parameters to \vb{YAML} \hlx
+    \cmd{rosparam delete \vb{PARAM}}         & delete \vb{PARAM} \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- ROS Topic ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Topic}} \\
-	\mytoprule
-	\cmd{rostopic list}					& print information about active topics \hlx
-	\cmd{rostopic bw \vb{TOPIC}}		& display bandwidth used by \vb{TOPIC} \hlx
-	\cmd{rostopic echo \vb{TOPIC}}		& print messages from \vb{TOPIC}\hlx
-	\cmd{rostopic find \vb{TYPE}}		& find topics of \vb{TYPE} \hlx
-	\cmd{rostopic hz \vb{TOPIC}}		& display publishing rate of \vb{TOPIC} \hlx
-	\cmd{rostopic info \vb{TOPIC}}		& print information about \vb{TOPIC} \hlx
-	\cmd{rostopic pub \vb{TOPIC}}		& publish data to \vb{TOPIC} \hlx
-	\cmd{rostopic type \vb{TOPIC}}		& print type of \vb{TOPIC} \hlx
-	\cmd{rosmsg show \vb{TYPE}}			& print structure of \vb{TYPE} \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Topic}} \\
+    \mytoprule
+    \cmd{rostopic list}                      & print information about active topics \hlx
+    \cmd{rostopic bw \vb{TOPIC}}             & display bandwidth used by \vb{TOPIC} \hlx
+    \cmd{rostopic echo \vb{TOPIC}}           & print messages from \vb{TOPIC}\hlx
+    \cmd{rostopic find \vb{TYPE}}            & find topics of \vb{TYPE} \hlx
+    \cmd{rostopic hz \vb{TOPIC}}             & display publishing rate of \vb{TOPIC} \hlx
+    \cmd{rostopic info \vb{TOPIC}}           & print information about \vb{TOPIC} \hlx
+    \cmd{rostopic pub \vb{TOPIC}}            & publish data to \vb{TOPIC} \hlx
+    \cmd{rostopic type \vb{TOPIC}}           & print type of \vb{TOPIC} \hlx
+    \cmd{rosmsg show \vb{TYPE}}              & print structure of \vb{TYPE} \\
+    \mybottomrule
 \end{tabularx}
 
 \vspace{0pt}
@@ -367,78 +376,78 @@ Always remember to \cb{\cmd{source \textasciitilde/catkin\_ws/devel/setup.bash}}
 
 % ---------- ROS Service ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Service}} \\
-	\mytoprule
-	\cmd{rosservice list}							& list active services \hlx
-	\cmd{rosservice call \vb{SERVICE} \vb{ARGS}}	& call \vb{SERVICE} with \vb{ARGS} \hlx
-	\cmd{rosservice find \vb{TYPE}}					& find services of \vb{TYPE} \hlx
-	\cmd{rosservice info \vb{SERVICE}}				& print information about \vb{SERVICE} \hlx
-	\cmd{rosservice type \vb{SERVICE}}				& print type of \vb{SERVICE} \hlx
-	\cmd{rosservice uri \vb{SERVICE}}				& print uri of \vb{SERVICE} \hlx
-	\cmd{rossrv show \vb{TYPE}}						& print structure of \vb{TYPE} \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Service}} \\
+    \mytoprule
+    \cmd{rosservice list}                          & list active services \hlx
+    \cmd{rosservice call \vb{SERVICE} \vb{ARGS}}   & call \vb{SERVICE} with \vb{ARGS} \hlx
+    \cmd{rosservice find \vb{TYPE}}                & find services of \vb{TYPE} \hlx
+    \cmd{rosservice info \vb{SERVICE}}             & print information about \vb{SERVICE} \hlx
+    \cmd{rosservice type \vb{SERVICE}}             & print type of \vb{SERVICE} \hlx
+    \cmd{rosservice uri \vb{SERVICE}}              & print uri of \vb{SERVICE} \hlx
+    \cmd{rossrv show \vb{TYPE}}                    & print structure of \vb{TYPE} \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- ROS Environmental Variables ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Environmental Variables}} \\
-	\mytoprule
-	\code{ROS\_ROOT}			& location of core ROS packages \hlx
-	\code{ROS\_MASTER\_URI}		& location of the master \hlx
-	\code{ROS\_PACKAGE\_PATH}	& location for more ROS packages \hlx
-	\code{ROS\_HOSTNAME}		& network address of a node \hlx
-	\code{ROS\_IP}				& IP address of a node \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Environmental Variables}} \\
+    \mytoprule
+    \code{ROS\_ROOT}            & location of core ROS packages \hlx
+    \code{ROS\_MASTER\_URI}     & location of the master \hlx
+    \code{ROS\_PACKAGE\_PATH}   & location for more ROS packages \hlx
+    \code{ROS\_HOSTNAME}        & network address of a node \hlx
+    \code{ROS\_IP}              & IP address of a node \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- ROS Bag ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Bag}} \\
-	\mytoprule
-	\cmd{rosbag record \vb{TOPIC}}		& record \vb{TOPIC} into bag \hlx
-	\cmd{rosbag info \vb{BAG}}			& print content summary of \vb{BAG} \hlx
-	\cmd{rosbag play \vb{BAG}}			& play back content of \vb{BAG} \hlx
-	\cmd{rosbag check \vb{BAG}}			& check play-ability of \vb{BAG} in current system \hlx
-	\cmd{rosbag compress \vb{BAG}}		& compress \vb{BAG} using BZ2 \hlx
-	\cmd{rosbag decompress \vb{BAG}}	& decompress \vb{BAG} using BZ2 \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Bag}} \\
+    \mytoprule
+    \cmd{rosbag record \vb{TOPIC}}      & record \vb{TOPIC} into bag \hlx
+    \cmd{rosbag info \vb{BAG}}          & print content summary of \vb{BAG} \hlx
+    \cmd{rosbag play \vb{BAG}}          & play back content of \vb{BAG} \hlx
+    \cmd{rosbag check \vb{BAG}}         & check play-ability of \vb{BAG} in current system \hlx
+    \cmd{rosbag compress \vb{BAG}}      & compress \vb{BAG} using BZ2 \hlx
+    \cmd{rosbag decompress \vb{BAG}}    & decompress \vb{BAG} using BZ2 \\
+    \mybottomrule
 \end{tabularx}
 When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to append \cb{\code{{-}{-}clock}}.
 \bigskip
 
 % ---------- ROS Visualization Tools ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Visualization Tools}} \\
-	\mytoprule
-	\cmd{rviz}				& 3D visualization of data and models \hlx
-	\cmd{gzclient}			& Gazebo GUI \hlx
-	\cmd{rqt}				& powerful GUI tool \\
-	\cmd{rqt\_plot}			& simple and lightweight plotting \\
-	\cmd{rqt\_bag}			& visualize content of a bag \\
-	\cmd{rqt\_image\_view}	& visualize camera images \\
-	\cmd{rqt\_graph}		& visualize computation graph \\
-	\cmd{rqt\_tf\_tree}		& visualize TF frame tree \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Visualization Tools}} \\
+    \mytoprule
+    \cmd{rviz}              & 3D visualization of data and models \hlx
+    \cmd{gzclient}          & Gazebo GUI \hlx
+    \cmd{rqt}               & powerful GUI tool \\
+    \cmd{rqt\_plot}         & simple and lightweight plotting \\
+    \cmd{rqt\_bag}          & visualize content of a bag \\
+    \cmd{rqt\_image\_view}  & visualize camera images \\
+    \cmd{rqt\_graph}        & visualize computation graph \\
+    \cmd{rqt\_tf\_tree}     & visualize TF frame tree \\
+    \mybottomrule
 \end{tabularx}
 \bigskip
 
 % ---------- ROS Packge Structure ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
-	\mytoprule
-	\code{package.xml}		& manifest, dependencies and plugins \hlx
-	\code{CMakeLists.txt}	& description of compilation procedure \hlx
-	\code{src/}				& C and C++ source codes \hlx
-	\code{build/}			& generated makefiles and support files \hlx
-	\code{devel/}			& compiled binaries, libraries, headers \hlx
-	\code{include/}			& C and C++ header files \hlx
-	\code{scripts/}			& Python and bash scripts \hlx
-	\code{config/}			& YMAL configuration files \hlx
-	\code{cfg/}				& dynamic reconfigure scripts \hlx
-	\code{launch/}			& launch files \\
-	\mybottomrule
+    \multicolumn{2}{@{}l@{}}{\headbf{ROS Packge Structure}} \\
+    \mytoprule
+    \code{package.xml}       & manifest, dependencies and plugins \hlx
+    \code{CMakeLists.txt}    & description of compilation procedure \hlx
+    \code{src/}              & C and C++ source codes \hlx
+    \code{build/}            & generated makefiles and support files \hlx
+    \code{devel/}            & compiled binaries, libraries, headers \hlx
+    \code{include/}          & C and C++ header files \hlx
+    \code{scripts/}          & Python and bash scripts \hlx
+    \code{config/}           & YMAL configuration files \hlx
+    \code{cfg/}              & dynamic reconfigure scripts \hlx
+    \code{launch/}           & launch files \\
+    \mybottomrule
 \end{tabularx}
 
 \vspace{0pt}
@@ -447,157 +456,61 @@ When simulating in ROS, remember \cb{\cmd{set use\_sim\_time true}} and to appen
 
 % ---------- ROS TF2 ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-			\multicolumn{1}{@{}l@{}}{\headbf{ROS TF2}} \\
-			\mytoprule
-			\cmd{rosrun tf tf\_echo \vb{FRAME1} \vb{FRAME2}} \\
-			print coordinate frame relationship between \vb{FRAME1} and \vb{FRAME2} \\
-			Eg. \$ rosrun tf tf\_echo /map /odom \hlx
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-			\cmd{rosrun tf view frames}			& visualize coordinate transform tree \\
-			\mybottomrule
-	\end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+            \multicolumn{1}{@{}l@{}}{\headbf{ROS TF2}} \\
+            \mytoprule
+            \cmd{rosrun tf tf\_echo \vb{FRAME1} \vb{FRAME2}} \\
+            print coordinate frame relationship between \vb{FRAME1} and \vb{FRAME2} \\
+            Eg. \$ rosrun tf tf\_echo /map /odom \hlx
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+            \cmd{rosrun tf view frames}            & visualize coordinate transform tree \\
+            \mybottomrule
+    \end{tabularx} } \\
 \end{tabularx}
 tf2 is a power package to deal with coordinate \textbf{t}rans\textbf{f}orm. It maintains the relationship between coordinate frames in a tree structure buffered in time, and lets the user transform points, vectors, etc between any two coordinate frames at any desired point in time.
 \bigskip
 
 % ---------- ROS Launch File ---------- %
 \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-			\multicolumn{1}{@{}l@{}}{\headbf{ROS Launch File}} \\
-			\mytoprule
-			\xmltag{node name=\vb{NODE} pkg=\vb{PACKAGE} type=\vb{EXE} [args=\vb{ARGS}]} \\
-			launch \vb{NODE} using the \vb{EXE} from \vb{PACKAGE} with command line arguments \vb{ARGS} \\
-			Eg. \xmltag{node name="rosbag\_record" pkg="rosbag" type="record" args="-a" output="screen"} \hlx
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-			\xmltag{include file=\vb{LAUNCHFILE}}			& import \vb{LAUNCHFILE} into the current one \\
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-			Eg. \xmltag{include file="\$(smb\_local\_planner)/launch/local\_planner.launch"}  \hlx
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
-			\xmltag{arg name=\vb{ARG}}						& declare the existence of \vb{ARG} \\
-			\xmltag{arg name=\vb{ARG} value=\vb{VAL}}		& declare \vb{ARG} with constant value \vb{VAL} \\
-			\xmltag{arg name=\vb{ARG} default=\vb{VAL}}		& declare \vb{ARG} with default value \vb{VAL} \\
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-		Eg. <arg name="rviz" value="true"/> \hlx
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
-		\xmltag{param name=\vb{PARAM} value=\vb{VAL}}		& set \vb{PARAM} to \vb{VAL} \\
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-			{Eg. }\xmltag{param name="frequency" value="300"} \hlx
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
-			\xmltag{remap from=\vb{OLD} to=\vb{NEW}}		& remap name \vb{OLD} to name \vb{NEW} \\
-	\end{tabularx} } \\
-	{ \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-			{Eg. }\xmltag{remap from="/base\_pose\_measured" to="/base\_pose\_measured\_disabled"} \\
-			\mybottomrule
-	\end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+            \multicolumn{1}{@{}l@{}}{\headbf{ROS Launch File}} \\
+            \mytoprule
+            \xmltag{node name=\vb{NODE} pkg=\vb{PACKAGE} type=\vb{EXE} [args=\vb{ARGS}]} \\
+            launch \vb{NODE} using the \vb{EXE} from \vb{PACKAGE} with command line arguments \vb{ARGS} \\
+            Eg. \xmltag{node name="rosbag\_record" pkg="rosbag" type="record" args="-a" output="screen"} \hlx
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
+            \xmltag{include file=\vb{LAUNCHFILE}}            & import \vb{LAUNCHFILE} into the current one \\
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+            Eg. \xmltag{include file="\$(smb\_local\_planner)/launch/local\_planner.launch"}  \hlx
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
+            \xmltag{arg name=\vb{ARG}}                       & declare the existence of \vb{ARG} \\
+            \xmltag{arg name=\vb{ARG} value=\vb{VAL}}        & declare \vb{ARG} with constant value \vb{VAL} \\
+            \xmltag{arg name=\vb{ARG} default=\vb{VAL}}      & declare \vb{ARG} with default value \vb{VAL} \\
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+        Eg. <arg name="rviz" value="true"/> \hlx
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
+        \xmltag{param name=\vb{PARAM} value=\vb{VAL}}        & set \vb{PARAM} to \vb{VAL} \\
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+            {Eg. }\xmltag{param name="frequency" value="300"} \hlx
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}R@{}}
+            \xmltag{remap from=\vb{OLD} to=\vb{NEW}}        & remap name \vb{OLD} to name \vb{NEW} \\
+    \end{tabularx} } \\
+    { \begin{tabularx}{\linewidth}[ht]{@{}L@{}}
+            {Eg. }\xmltag{remap from="/base\_pose\_measured" to="/base\_pose\_measured\_disabled"} \\
+            \mybottomrule
+    \end{tabularx} } \\
 \end{tabularx}
 \bigskip
-
-% ---------- SMB Workspace ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{SMB Workspace}} \\
-	\mytoprule
-	\code{Key Packages}				& \\
-	rovio							& robust visual inertial odometry framework \\
-	maplab							& visual-inertial mapping framework \\
-	voxblox							& volumetric mapping library \\
-	apriltag						& visual fiducial system \\
-	elevation\_mapping				& produce elevation map around robot \\
-	traversability\_estimation		& traversability mapping for rough terrain \\
-	icp\_mapper						& iterative closest point based slam system \\
-	smb\_local\_planner				& path planning system for SMB \hlx
-	\code{Configuration}			& \\
-	Placeholder						& \\
-	Placeholder						& \\
-	Placeholder						& \\
-	Placeholder						& \\
-	Placeholder						& \hlx
-	\code{Launch Files}				& \\
-	Placeholder						& \\
-	Placeholder						& \\
-	Placeholder						& \\
-	Placeholder						& \\
-	Placeholder						& \\
-	\mybottomrule
-\end{tabularx}
-Always remember to charge your SMB after each use.
 
 \vfill\null
-\newpage
-
-% ---------- Candidate Contents ---------- %
-\begin{mdframed}[style=TitleStyle]
-	\begin{center}
-		\fontfamily{pnc} \selectfont
-		\large\scshape
-		Candidate \\
-		Contents \\
-	\end{center}
-\end{mdframed}
-\bigskip
-
-% ---------- Compression ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Compression}} \\
-	\mytoprule
-	\cmd{tar cf \vb{FILE.tar} \vb{FILES}}		& convert \vb{FILES} into \vb{FILE.tar} \hlx
-	\cmd{tar xf \vb{FILE.tar}}					& extract files from \vb{FILE.tar} \hlx
-	\cmd{tar czf \vb{FILE.tar.gz} \vb{FILES}}	& compress \vb{FILES} into \vb{FILE.tar.gz} using Gzip \hlx
-	\cmd{tar xfz \vb{FILE.tar.gz}}				& extract files from \vb{FILE.tar.gz} using Gzip \hlx
-	\cmd{gzip \vb{FILE}}						& compress \vb{FILE} and rename it as \vb{FILE.gz} \hlx
-	\cmd{gzip -d \vb{FILE.gz}}					& decompress \vb{FILE.gz} back to \vb{FILE} \\
-	\mybottomrule
-\end{tabularx}
-\bigskip
-
-% ---------- Network ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LR@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{Network}} \\
-	\mytoprule
-	\cmd{ip address}			& print all internet protocol addresses \hlx
-	\cmd{ping \vb{HOST}}		& ping \vb{HOST} and print results \hlx
-	\cmd{whois \vb{DOMAIN}}		& print information about \vb{DOMAIN} \hlx
-	\cmd{dig \vb{DOMAIN}}		& print DNS of \vb{DOMAIN} \hlx
-	\cmd{dig -x \vb{HOST}}		& reverse lookup \vb{HOST} \hlx
-	\cmd{wget \vb{FILE}}		& download \vb{FILE} \\
-	\mybottomrule
-\end{tabularx}
-\bigskip
-
-% ---------- ROS Launch File Elements ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}LB@{}}
-	\multicolumn{2}{@{}l@{}}{\headbf{ROS Launch File Elements}} \\
-	\mytoprule
-	\tag{node}& launch a node \hlx
-	\tag{param}& set a parameter on the parameter server \hlx
-	\tag{remap}& declare a name mapping \hlx
-	\tag{rosparam}& set ROS parameters for the launch \hlx
-	\tag{include}& include other roslaunch files \hlx
-	\tag{env}& specify an environment variable for launched nodes \hlx
-	\tag{arg}& declare an argument \hlx
-	\tag{group}& group enclosed elements sharing a namespace or remap \\
-	\mybottomrule
-\end{tabularx}
-\bigskip
-
-% ---------- Thomas Comments ---------- %
-\begin{tabularx}{\linewidth}[ht]{@{}L@{}}
-	\multicolumn{1}{@{}l@{}}{\headbf{Thomas Comments}} \\
-	\mytoprule
-	\code{\ctrlp \altp T} is a desktop environment shortcut actually, not a Linux Shell command. \hlx
-	ROS Variables Section \\
-	\mybottomrule
-\end{tabularx}
-\bigskip
-
 
 \end{multicols*}
 \end{document}

@@ -16,7 +16,7 @@ This repository contains a cheat sheet for frequently-used commands and knowledg
 
 ## Maintainer
 
-Current maintainer is Yize Wang - `EldenWang@hotmail.com`
+Current maintainer is Yize Wang - `yize.wang.robotics@outlook.com`
 
 ## Acknowledgement
 
